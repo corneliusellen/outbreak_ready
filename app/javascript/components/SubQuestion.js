@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Heading } from 'react-bulma-components';
+import { Form } from 'react-bulma-components';
+import { Columns } from 'react-bulma-components';
 import Checkbox from './form_elements/Checkbox.js'
 
 class SubQuestion extends React.Component {
@@ -25,10 +28,16 @@ class SubQuestion extends React.Component {
       </div>
     ))
 
+    let text
+    if (this.props.parent) {
+      text = <div><Heading>{this.props.subQuestion.text}</Heading><Columns><Form.Field>{checkboxes}</Form.Field></Columns></div>
+    } else {
+      text = <div>{this.props.subQuestion.text}<Columns>{checkboxes}</Columns></div>
+    }
+
     return(
       <div>
-        {this.props.subQuestion.text}
-        {checkboxes}
+        {text}
       </div>
     )
   }

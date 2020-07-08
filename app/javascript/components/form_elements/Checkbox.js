@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SubCheckbox from './SubCheckbox.js'
+import { Container } from 'react-bulma-components';
+import { Section } from 'react-bulma-components';
+import { Columns } from 'react-bulma-components';
+import SubCheckbox from './SubCheckbox.js';
 
 class Checkbox extends React.Component {
   constructor() {
@@ -37,7 +40,7 @@ class Checkbox extends React.Component {
     }
 
     return(
-      <React.Fragment>
+      <Columns.Column>
         <label>
           <input type='checkbox' name={this.props.name} checked={this.props.checked} onChange={this.onChange} />
           {this.props.name}
@@ -45,7 +48,7 @@ class Checkbox extends React.Component {
         <div>
           {subCheckboxes}
         </div>
-      </React.Fragment>
+      </Columns.Column>
     )
   }
 }
