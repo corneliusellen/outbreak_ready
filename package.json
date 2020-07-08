@@ -17,5 +17,8 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "build": "babel src -d lib"
   }
 }
