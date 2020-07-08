@@ -1,5 +1,5 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Container } from 'react-bulma-components';
 import { Heading } from 'react-bulma-components';
@@ -35,7 +35,7 @@ class QuestionGroup extends React.Component {
     }
 
     return (
-      <Container>
+      <div>
         <Heading>
           {this.props.text}
         </Heading>
@@ -45,7 +45,7 @@ class QuestionGroup extends React.Component {
         <Form.Field>
           {showSubQuestion}
         </Form.Field>
-      </Container>
+      </div>
     )
   }
 }
