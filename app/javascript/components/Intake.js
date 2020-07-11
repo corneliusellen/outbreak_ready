@@ -105,7 +105,7 @@ class Intake extends React.Component {
               <Button>Cancel</Button>
             </Form.Control>
             <Form.Control>
-              <Button className="button is-info" renderAs="a" href="/intake">Submit</Button>
+              <Button className="button is-info" renderAs="a" href="/builder">Submit</Button>
             </Form.Control>
           </Form.Field>
         </Container>
