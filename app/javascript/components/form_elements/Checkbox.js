@@ -13,10 +13,11 @@ class Checkbox extends React.Component {
       checkedSubCheckboxes: new Map()
     }
     this.handleSubClick = this.handleSubClick.bind(this)
+    this.onChange = this.onChange.bind(this)
   }
 
   onChange = (e) => {
-    this.props.onChange;
+    this.props.onChange(e);
     if (this.props.subCheckboxes) {
       this.setState({subCheckboxes: !this.state.subCheckboxes})
     }
