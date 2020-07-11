@@ -27,6 +27,9 @@ class QuestionBank extends React.Component {
   render() {
     return(
       <Section>
+        <Heading>
+          Question Bank
+        </Heading>
         <SearchBar
           filterText={this.state.filterText}
           onFilterTextChange={this.handleFilterTextChange}
