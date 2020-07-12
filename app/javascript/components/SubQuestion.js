@@ -18,6 +18,7 @@ class SubQuestion extends React.Component {
   handleChange(e) {
     const item = e.target.name;
     const isChecked = e.target.checked;
+
     this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
   }
 
@@ -30,9 +31,29 @@ class SubQuestion extends React.Component {
 
     let text
     if (this.props.parent) {
-      text = <div><Heading>{this.props.subQuestion.text}</Heading><Columns><Form.Field>{checkboxes}</Form.Field></Columns></div>
+      text =
+        <Form.Field>
+          <Form.Label>
+            {this.props.subQuestion.text}
+          </Form.Label>
+          <Form.Control>
+            <Columns>
+              {checkboxes}
+            </Columns>
+          </Form.Control>
+        </Form.Field>
     } else {
-      text = <div>{this.props.subQuestion.text}<Columns>{checkboxes}</Columns></div>
+      text =
+        <Form.Field>
+          <Form.Label>
+            {this.props.subQuestion.text}
+          </Form.Label>
+          <Form.Control>
+            <Columns>
+              {checkboxes}
+            </Columns>
+          </Form.Control>
+        </Form.Field>
     }
 
     return(

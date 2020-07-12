@@ -35,17 +35,17 @@ class QuestionGroup extends React.Component {
     }
 
     return (
-      <div>
-        <Heading>
+      <Form.Field>
+        <Form.Label>
           {this.props.text}
-        </Heading>
-        <Form.Field>
+        </Form.Label>
+        <Form.Control>
           <RadioGroup options={this.props.options} onSubQuestionsAppear={this.handleSubQuestionsAppear}/>
-        </Form.Field>
-        <Form.Field>
-          {showSubQuestion}
-        </Form.Field>
-      </div>
+          <Section>
+            {showSubQuestion}
+          </Section>
+        </Form.Control>
+      </Form.Field>
     )
   }
 }
