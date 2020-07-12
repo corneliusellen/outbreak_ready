@@ -24,6 +24,13 @@ class QuestionGroup extends React.Component {
     })
   }
 
+
+    // handle checks and subchecks
+
+    // rename stuff
+
+    // parent dropdown should also uncheck
+
   render () {
     const index = this.state.logic
     let showSubQuestion

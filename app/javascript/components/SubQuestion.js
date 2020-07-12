@@ -13,6 +13,7 @@ class SubQuestion extends React.Component {
       checkedItems: new Map()
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
   }
 
   handleChange(e) {
@@ -22,12 +23,26 @@ class SubQuestion extends React.Component {
     this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
   }
 
+  handleCheckboxChange(e) {
+    this.props.handleCheckboxChange(e)
+  }
+
   render() {
-    const checkboxes = this.props.subQuestion.options.map(option => (
-      <div key={option[0]}>
-          <Checkbox name={option[0]} checked={this.state.checkedItems.get(option[0])} onChange={this.handleChange} subCheckboxes={option[1]} />
-      </div>
-    ))
+    let checkboxes
+    if (this.props.parent) {
+      checkboxes = this.props.subQuestion.options.map(option => (
+        <div key={option[0]}>
+            <Checkbox name={option[0]} checked={this.props.checkedTags.get(option[0])} handleCheckboxChange={this.handleCheckboxChange} subCheckboxes={option[1]} parent={this.props.parent} />
+        </div>
+      ))
+    } else {
+      checkboxes = this.props.subQuestion.options.map(option => (
+        <div key={option[0]}>
+        <Checkbox name={option[0]} checked={this.state.checkedItems.get(option[0])} onChange={this.handleChange} subCheckboxes={option[1]} />
+        </div>
+      ))
+    }
+
 
     let text
     if (this.props.parent) {

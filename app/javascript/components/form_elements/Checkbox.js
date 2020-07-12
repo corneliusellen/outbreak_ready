@@ -14,6 +14,8 @@ class Checkbox extends React.Component {
     }
     this.handleSubClick = this.handleSubClick.bind(this)
     this.onChange = this.onChange.bind(this)
+
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
   }
 
   onChange = (e) => {
@@ -29,9 +31,12 @@ class Checkbox extends React.Component {
     this.setState(prevState => ({ checkedSubCheckboxes: prevState.checkedSubCheckboxes.set(item, isChecked) }));
   }
 
+  handleCheckboxChange(e) {
+    this.props.handleCheckboxChange(e)
+  }
+
   render() {
     let subCheckboxes
-
     if (this.state.subCheckboxes) {
       subCheckboxes = this.props.subCheckboxes.map(option => (
         <div key={option}>
@@ -40,10 +45,23 @@ class Checkbox extends React.Component {
       ))
     }
 
+    let checkbox
+    if (this.props.parent) {
+      checkbox = <input type='checkbox'
+                        name={this.props.name}
+                        checked={this.props.checked}
+                        onChange={this.handleCheckboxChange} />
+    } else {
+      checkbox = <input type='checkbox'
+                        name={this.props.name}
+                        checked={this.props.checked}
+                       onChange={this.onChange} />
+    }
+
     return(
       <Columns.Column>
         <label>
-          <input type='checkbox' name={this.props.name} checked={this.props.checked} onChange={this.onChange} />
+          {checkbox}
           {this.props.name}
         </label>
         <div>

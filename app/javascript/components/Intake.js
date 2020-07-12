@@ -14,14 +14,23 @@ class Intake extends React.Component {
   constructor() {
     super()
     this.state = {
-      questionnaireName: ''
+      questionnaireName: '',
+      checkedTags: new Map()
     }
+    this.onCheckboxChange = this.onCheckboxChange.bind(this)
   }
 
   onQuestionnaireNameChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
+  }
+
+  onCheckboxChange = (e) => {
+    const tag = e.target.name;
+    const isChecked = e.target.checked;
+
+    this.setState(prevState => ({ checkedTags: prevState.checkedTags.set(tag, isChecked) }));
   }
 
   onSubmit = (e) => {
@@ -93,7 +102,9 @@ class Intake extends React.Component {
                   options: [['Cannabis use'],['Sexual history'],['Illicit drug use']],
                   type: 'Checkbox',
                   logic: 1
-                } } parent={true}/>
+                } } parent={true}
+                checkedTags={this.state.checkedTags}
+                handleCheckboxChange={this.onCheckboxChange} />
           </Container>
         </Section>
         <Section>
