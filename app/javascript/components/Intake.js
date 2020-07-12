@@ -34,8 +34,13 @@ class Intake extends React.Component {
   }
 
   onSubmit = (e) => {
-    const { email } = this.state;
-    axios.post('/intake', { email })
+    const { questionnaireName, checkedTags } = this.state;
+    const tags = []
+    const filterCheckedTags = function(value,key,map){if (value == true) { tags.push(key) }}
+
+    checkedTags.forEach(filterCheckedTags)
+
+    axios.post('/intake', { questionnaireName, tags })
       .then((result) => {
         return;
       });
