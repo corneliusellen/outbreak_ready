@@ -28,13 +28,6 @@ class QuestionGroup extends React.Component {
     this.props.handleCheckboxChange(e)
   }
 
-
-    // axios and filter
-
-    // rename stuff
-
-    // parent dropdown should also uncheck
-
   render () {
     const index = this.state.logic
     let showSubQuestion
