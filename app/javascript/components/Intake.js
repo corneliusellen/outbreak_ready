@@ -6,6 +6,7 @@ import { Heading } from 'react-bulma-components';
 import { Section } from 'react-bulma-components';
 import { Form } from 'react-bulma-components';
 import { Button } from 'react-bulma-components';
+import axios from 'axios';
 import QuestionGroup from './QuestionGroup.js';
 import SubQuestion from './SubQuestion.js';
 
@@ -21,6 +22,14 @@ class Intake extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
+  }
+
+  onSubmit = (e) => {
+    const { email } = this.state;
+    axios.post('/intake', { email })
+      .then((result) => {
+        return;
+      });
   }
 
   render () {
@@ -54,12 +63,12 @@ class Intake extends React.Component {
                                             }
                                           ]
                                         }
-            />
-          </Container>
-        </Section>
-        <Section>
-          <Container>
-            <QuestionGroup text='2. Which of the following best describes the type of outbreak you are investigating?'
+              />
+            </Container>
+          </Section>
+          <Section>
+            <Container>
+              <QuestionGroup text='2. Which of the following best describes the type of outbreak you are investigating?'
                            options={ [["A localized outbreak associated with an event or single setting (e.g., potluck, wedding, petting zoo, camp, hospital)", 0, 3], ["A dispersed outbreak likely associated with a widely distributed food or product", 1, 4]] }
                            type= 'RadioGroup'
                            subQuestions={ [
@@ -81,34 +90,36 @@ class Intake extends React.Component {
         <Section>
           <Container>
             <SubQuestion subQuestion={ { text: "3. Do you want to include additional questions on any of the following topics? (check all that apply)",
-              options: [['Cannabis use'],['Sexual history'],['Illicit drug use']],
-              type: 'Checkbox',
-              logic: 1
-            } } parent={true}/>
+                  options: [['Cannabis use'],['Sexual history'],['Illicit drug use']],
+                  type: 'Checkbox',
+                  logic: 1
+                } } parent={true}/>
           </Container>
         </Section>
         <Section>
           <Container>
-            <Heading>
-              4. Enter a name for your outbreak questionnaire:
-            </Heading>
             <Form.Field>
+              <Form.Label>
+                4. Enter a name for your outbreak questionnaire:
+              </Form.Label>
               <Form.Control>
                 <Form.Input onChange={this.onChange} name="email" type="email" placeholder="My amazing questionnaire" value={this.state.email}/>
               </Form.Control>
             </Form.Field>
-          </Container>
-        </Section>
-        <Container>
-          <Form.Field kind="group">
-            <Form.Control>
-              <Button>Cancel</Button>
-            </Form.Control>
-            <Form.Control>
-              <Button className="button is-info" renderAs="a" href="/builder">Submit</Button>
-            </Form.Control>
-          </Form.Field>
-        </Container>
+            </Container>
+          </Section>
+          <Section>
+            <Container>
+              <Form.Field kind="group">
+                <Form.Control>
+                  <Button>Cancel</Button>
+                </Form.Control>
+                <Form.Control>
+                  <Button onClick={this.onSubmit} className="button is-info" renderAs="a" href="/builder">Submit</Button>
+                </Form.Control>
+              </Form.Field>
+            </Container>
+          </Section>
       </div>
     )
   }
