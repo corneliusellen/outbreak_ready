@@ -14,11 +14,11 @@ class Intake extends React.Component {
   constructor() {
     super()
     this.state = {
-      email: ''
+      questionnaireName: ''
     }
   }
 
-  onChange = (e) => {
+  onQuestionnaireNameChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -103,7 +103,7 @@ class Intake extends React.Component {
                 4. Enter a name for your outbreak questionnaire:
               </Form.Label>
               <Form.Control>
-                <Form.Input onChange={this.onChange} name="email" type="email" placeholder="My amazing questionnaire" value={this.state.email}/>
+                <Form.Input onChange={this.onQuestionnaireNameChange} name="questionnaireName" type="text" placeholder="My amazing questionnaire" value={this.state.questionnaireName}/>
               </Form.Control>
             </Form.Field>
             </Container>
