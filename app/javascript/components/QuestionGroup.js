@@ -14,8 +14,8 @@ class QuestionGroup extends React.Component {
     this.state = {
       logic: undefined
     };
-
     this.handleSubQuestionsAppear = this.handleSubQuestionsAppear.bind(this)
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
   }
 
   handleSubQuestionsAppear(subQuestionIndex) {
@@ -24,8 +24,12 @@ class QuestionGroup extends React.Component {
     })
   }
 
+  handleCheckboxChange(e) {
+    this.props.handleCheckboxChange(e)
+  }
 
-    // handle checks and subchecks
+
+    // axios and filter
 
     // rename stuff
 
@@ -36,7 +40,8 @@ class QuestionGroup extends React.Component {
     let showSubQuestion
 
     if (index !== undefined) {
-      showSubQuestion = <SubQuestion subQuestion={this.props.subQuestions[index]}/>;
+      showSubQuestion = <SubQuestion subQuestion={this.props.subQuestions[index]}
+                                     handleCheckboxChange={this.handleCheckboxChange} checkedTags={this.props.checkedTags} />;
     } else {
       showSubQuestion = null
     }

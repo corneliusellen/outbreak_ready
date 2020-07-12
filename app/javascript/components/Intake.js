@@ -59,6 +59,8 @@ class Intake extends React.Component {
             <QuestionGroup text='1. Do you have a suspect or confirmed etiology?'
                            options={ [['Yes', 0, 1], ['No', 1, 2]] }
                            type= 'RadioGroup'
+                           checkedTags={this.state.checkedTags}
+                           handleCheckboxChange={this.onCheckboxChange}
                            subQuestions={ [
                                             { text: '1a. Suspected etiology - select all that apply:',
                                               options: [['Bacteria', ['Campylobacter jejuni','Clostridium botulinum','E. Coli','E. coli 0157:H7','Listeria monocytogenes','Salmonella','Shigella','Vibro parahaemolyticus','Vibro vulnificus']], ['Viral', ['Norovirus','Hepatitis A']], ['Parasite',['Cryptosporidium','Cyclospora cayetanensis','Giardia lamblia']], ['Toxin', ['Bacillus cereus','Clostridium perfringens','Staphyloccocus aureus']], ['Chemical'], ['Other']],
@@ -79,6 +81,8 @@ class Intake extends React.Component {
             <Container>
               <QuestionGroup text='2. Which of the following best describes the type of outbreak you are investigating?'
                            options={ [["A localized outbreak associated with an event or single setting (e.g., potluck, wedding, petting zoo, camp, hospital)", 0, 3], ["A dispersed outbreak likely associated with a widely distributed food or product", 1, 4]] }
+                           checkedTags={this.state.checkedTags}
+                           handleCheckboxChange={this.onCheckboxChange}
                            type= 'RadioGroup'
                            subQuestions={ [
                                             { text: '2a. Suspected setting-select all that apply:',
