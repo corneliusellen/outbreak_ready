@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'hello#index'
 
   get '/intake', to: 'intake#index'
+  post '/intake', to: 'intake#create'
   get '/builder', to: 'builder#index'
 end

@@ -6,6 +6,7 @@ import { Heading } from 'react-bulma-components';
 import { Section } from 'react-bulma-components';
 import { Form } from 'react-bulma-components';
 import { Button } from 'react-bulma-components';
+import axios from 'axios';
 import QuestionGroup from './QuestionGroup.js';
 import SubQuestion from './SubQuestion.js';
 
@@ -13,14 +14,36 @@ class Intake extends React.Component {
   constructor() {
     super()
     this.state = {
-      email: ''
+      questionnaireName: '',
+      checkedTags: new Map()
     }
+    this.onCheckboxChange = this.onCheckboxChange.bind(this)
   }
 
-  onChange = (e) => {
+  onQuestionnaireNameChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
+  }
+
+  onCheckboxChange = (e) => {
+    const tag = e.target.name;
+    const isChecked = e.target.checked;
+
+    this.setState(prevState => ({ checkedTags: prevState.checkedTags.set(tag, isChecked) }));
+  }
+
+  onSubmit = (e) => {
+    const { questionnaireName, checkedTags } = this.state;
+    const tags = []
+    const filterCheckedTags = function(value,key,map){if (value == true) { tags.push(key) }}
+
+    checkedTags.forEach(filterCheckedTags)
+
+    axios.post('/intake', { questionnaireName, tags })
+      .then((result) => {
+        return;
+      });
   }
 
   render () {
@@ -41,6 +64,8 @@ class Intake extends React.Component {
             <QuestionGroup text='1. Do you have a suspect or confirmed etiology?'
                            options={ [['Yes', 0, 1], ['No', 1, 2]] }
                            type= 'RadioGroup'
+                           checkedTags={this.state.checkedTags}
+                           handleCheckboxChange={this.onCheckboxChange}
                            subQuestions={ [
                                             { text: '1a. Suspected etiology - select all that apply:',
                                               options: [['Bacteria', ['Campylobacter jejuni','Clostridium botulinum','E. Coli','E. coli 0157:H7','Listeria monocytogenes','Salmonella','Shigella','Vibro parahaemolyticus','Vibro vulnificus']], ['Viral', ['Norovirus','Hepatitis A']], ['Parasite',['Cryptosporidium','Cyclospora cayetanensis','Giardia lamblia']], ['Toxin', ['Bacillus cereus','Clostridium perfringens','Staphyloccocus aureus']], ['Chemical'], ['Other']],
@@ -54,13 +79,15 @@ class Intake extends React.Component {
                                             }
                                           ]
                                         }
-            />
-          </Container>
-        </Section>
-        <Section>
-          <Container>
-            <QuestionGroup text='2. Which of the following best describes the type of outbreak you are investigating?'
+              />
+            </Container>
+          </Section>
+          <Section>
+            <Container>
+              <QuestionGroup text='2. Which of the following best describes the type of outbreak you are investigating?'
                            options={ [["A localized outbreak associated with an event or single setting (e.g., potluck, wedding, petting zoo, camp, hospital)", 0, 3], ["A dispersed outbreak likely associated with a widely distributed food or product", 1, 4]] }
+                           checkedTags={this.state.checkedTags}
+                           handleCheckboxChange={this.onCheckboxChange}
                            type= 'RadioGroup'
                            subQuestions={ [
                                             { text: '2a. Suspected setting-select all that apply:',
@@ -81,34 +108,38 @@ class Intake extends React.Component {
         <Section>
           <Container>
             <SubQuestion subQuestion={ { text: "3. Do you want to include additional questions on any of the following topics? (check all that apply)",
-              options: [['Cannabis use'],['Sexual history'],['Illicit drug use']],
-              type: 'Checkbox',
-              logic: 1
-            } } parent={true}/>
+                  options: [['Cannabis use'],['Sexual history'],['Illicit drug use']],
+                  type: 'Checkbox',
+                  logic: 1
+                } } parent={true}
+                checkedTags={this.state.checkedTags}
+                handleCheckboxChange={this.onCheckboxChange} />
           </Container>
         </Section>
         <Section>
           <Container>
-            <Heading>
-              4. Enter a name for your outbreak questionnaire:
-            </Heading>
             <Form.Field>
+              <Form.Label>
+                4. Enter a name for your outbreak questionnaire:
+              </Form.Label>
               <Form.Control>
-                <Form.Input onChange={this.onChange} name="email" type="email" placeholder="My amazing questionnaire" value={this.state.email}/>
+                <Form.Input onChange={this.onQuestionnaireNameChange} name="questionnaireName" type="text" placeholder="My amazing questionnaire" value={this.state.questionnaireName}/>
               </Form.Control>
             </Form.Field>
-          </Container>
-        </Section>
-        <Container>
-          <Form.Field kind="group">
-            <Form.Control>
-              <Button>Cancel</Button>
-            </Form.Control>
-            <Form.Control>
-              <Button className="button is-info" renderAs="a" href="/builder">Submit</Button>
-            </Form.Control>
-          </Form.Field>
-        </Container>
+            </Container>
+          </Section>
+          <Section>
+            <Container>
+              <Form.Field kind="group">
+                <Form.Control>
+                  <Button>Cancel</Button>
+                </Form.Control>
+                <Form.Control>
+                  <Button onClick={this.onSubmit} className="button is-info" renderAs="a" href="/builder">Submit</Button>
+                </Form.Control>
+              </Form.Field>
+            </Container>
+          </Section>
       </div>
     )
   }

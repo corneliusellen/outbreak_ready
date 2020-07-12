@@ -19,7 +19,7 @@ class QuestionList extends React.Component {
     )
 
     const questionBlocks = filteredQuestions.map(question =>
-      <Question question={question}/>
+      <Question key={question.id} question={question}/>
     )
 
     return(

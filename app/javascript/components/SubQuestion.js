@@ -9,30 +9,47 @@ import Checkbox from './form_elements/Checkbox.js'
 class SubQuestion extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      checkedItems: new Map()
-    }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
   }
 
-  handleChange(e) {
-    const item = e.target.name;
-    const isChecked = e.target.checked;
-    this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
+  handleCheckboxChange(e) {
+    this.props.handleCheckboxChange(e)
   }
 
   render() {
     const checkboxes = this.props.subQuestion.options.map(option => (
       <div key={option[0]}>
-          <Checkbox name={option[0]} checked={this.state.checkedItems.get(option[0])} onChange={this.handleChange} subCheckboxes={option[1]} />
+          <Checkbox name={option[0]} checked={this.props.checkedTags.get(option[0])}
+          checkedTags={this.props.checkedTags} handleCheckboxChange={this.handleCheckboxChange} subCheckboxes={option[1]} parent={this.props.parent} />
       </div>
     ))
 
+
     let text
     if (this.props.parent) {
-      text = <div><Heading>{this.props.subQuestion.text}</Heading><Columns><Form.Field>{checkboxes}</Form.Field></Columns></div>
+      text =
+        <Form.Field>
+          <Form.Label>
+            {this.props.subQuestion.text}
+          </Form.Label>
+          <Form.Control>
+            <Columns>
+              {checkboxes}
+            </Columns>
+          </Form.Control>
+        </Form.Field>
     } else {
-      text = <div>{this.props.subQuestion.text}<Columns>{checkboxes}</Columns></div>
+      text =
+        <Form.Field>
+          <Form.Label>
+            {this.props.subQuestion.text}
+          </Form.Label>
+          <Form.Control>
+            <Columns>
+              {checkboxes}
+            </Columns>
+          </Form.Control>
+        </Form.Field>
     }
 
     return(

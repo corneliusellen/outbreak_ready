@@ -14,8 +14,8 @@ class QuestionGroup extends React.Component {
     this.state = {
       logic: undefined
     };
-
     this.handleSubQuestionsAppear = this.handleSubQuestionsAppear.bind(this)
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
   }
 
   handleSubQuestionsAppear(subQuestionIndex) {
@@ -24,28 +24,33 @@ class QuestionGroup extends React.Component {
     })
   }
 
+  handleCheckboxChange(e) {
+    this.props.handleCheckboxChange(e)
+  }
+
   render () {
     const index = this.state.logic
     let showSubQuestion
 
     if (index !== undefined) {
-      showSubQuestion = <SubQuestion subQuestion={this.props.subQuestions[index]}/>;
+      showSubQuestion = <SubQuestion subQuestion={this.props.subQuestions[index]}
+                                     handleCheckboxChange={this.handleCheckboxChange} checkedTags={this.props.checkedTags} />;
     } else {
       showSubQuestion = null
     }
 
     return (
-      <div>
-        <Heading>
+      <Form.Field>
+        <Form.Label>
           {this.props.text}
-        </Heading>
-        <Form.Field>
+        </Form.Label>
+        <Form.Control>
           <RadioGroup options={this.props.options} onSubQuestionsAppear={this.handleSubQuestionsAppear}/>
-        </Form.Field>
-        <Form.Field>
-          {showSubQuestion}
-        </Form.Field>
-      </div>
+          <Section>
+            {showSubQuestion}
+          </Section>
+        </Form.Control>
+      </Form.Field>
     )
   }
 }
