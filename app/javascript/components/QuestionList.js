@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Container } from 'react-bulma-components';
 import { Heading } from 'react-bulma-components';
@@ -14,17 +15,28 @@ class QuestionList extends React.Component {
   }
 
   render() {
+    const { provided, innerRef } = this.props;
+
     const filteredQuestions = this.props.questions.filter(question =>
       question.text.toLowerCase().indexOf(this.props.filterText.toLowerCase()) !== -1
     )
 
-    const questionBlocks = filteredQuestions.map(question =>
-      <Question key={question.id} question={question}/>
-    )
+    const questionBlocks = filteredQuestions.map((question,index) => (
+      <Draggable
+        key={question.id}
+        draggableId={String(question.id)}
+        index={index}
+      >
+        {provided => (
+          <Question key={question.id} question={question} provided={provided} innerRef={provided.innerRef}/>
+        )}
+      </Draggable>
+    ))
 
     return(
-      <div>
+      <div {...provided.droppableProps} ref={innerRef}>
         {questionBlocks}
+        {provided.placeholder}
       </div>
     );
   }
