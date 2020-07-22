@@ -35,20 +35,22 @@ const move = (source, destination, droppableSource, droppableDestination) => {
 };
 
 class Tab extends React.Component {
-  constructor(props) {
+  constructor() {
     super()
-    this.state = {
-      questions: props.questions,
-      selected: []
-    }
+    this.handleSelectQuestion = this.handleSelectQuestion.bind(this)
   };
+
+  handleSelectQuestion(newState) {
+    this.props.handleSelectQuestion(newState)
+  }
 
   id2List = {
     droppable: 'questions',
     droppable2: 'selected'
   };
 
-  getList = id => this.state[this.id2List[id]];
+  // getList = id => this.state[this.id2List[id]];
+  getList = id => this.props[this.id2List[id]];
 
   onDragEnd = result => {
       const { source, destination } = result;
@@ -59,19 +61,19 @@ class Tab extends React.Component {
       }
 
       if (source.droppableId === destination.droppableId) {
+        if (source.droppableId === 'droppable') {
+          return;
+        }
           const items = reorder(
               this.getList(source.droppableId),
               source.index,
               destination.index
           );
 
-          let state = { questions: items };
+          let state = { selected: items };
 
-          if (source.droppableId === 'droppable2') {
-              state = { selected: items };
-          }
-
-          this.setState(state);
+          // this.setState(state);
+          this.handleSelectQuestion(state);
       } else {
           const result = move(
               this.getList(source.droppableId),
@@ -80,7 +82,11 @@ class Tab extends React.Component {
               destination
           );
 
-          this.setState({
+          // this.setState({
+          //     questions: result.droppable,
+          //     selected: result.droppable2
+          // });
+          this.handleSelectQuestion({
               questions: result.droppable,
               selected: result.droppable2
           });
@@ -93,7 +99,7 @@ class Tab extends React.Component {
         <Columns>
           <Columns.Column
             size="one-third">
-            <QuestionBank questions={this.state.questions}/>
+            <QuestionBank questions={this.props.questions}/>
           </Columns.Column>
           <Columns.Column
             size="two-thirds"
@@ -103,7 +109,7 @@ class Tab extends React.Component {
                 {(provided) => (
                     <div
                         ref={provided.innerRef}>
-                        {this.state.selected.map((question, index) => (
+                        {this.props.selected.map((question, index) => (
                             <Draggable
                               key={question.id}
                               draggableId={String(question.id)}

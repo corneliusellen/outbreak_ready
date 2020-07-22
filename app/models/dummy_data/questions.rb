@@ -20,12 +20,14 @@ module DummyData
           {
             id: 3,
             text: "If yes, on which day?",
-            answer_type: :text
+            answer_type: :text,
+            answer_options: ['Yes', 'No']
           },
           {
             id: 4,
             text: "How many other people did you eat with?",
-            answer_type: :number
+            answer_type: :number,
+            answer_options: ['Yes', 'No']
           }
         ]
       }

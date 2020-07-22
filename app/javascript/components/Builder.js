@@ -23,6 +23,8 @@ class Builder extends React.Component {
       activeTab: [{name: "Interview", active: true},
                   {name: "Contact", active: false}],
     }
+
+    this.onSelectQuestion = this.onSelectQuestion.bind(this)
   };
 
   onTabClick = (e) => {
@@ -37,6 +39,22 @@ class Builder extends React.Component {
     });
 
     this.setState({activeTab: state});
+  }
+
+  onSelectQuestion = (newState) => {
+    const stuffs = newState;
+
+    this.setState(function(prevState) {
+      const activeTab = this.state.activeTab.filter(tab => tab.active)[0].name.toLowerCase();
+      const state = prevState;
+      if (newState.questions == undefined) {
+        state[activeTab]['selected'] = newState['selected'];
+        return state
+      } else {
+        state[activeTab] = newState;
+        return state
+      }
+    });
   }
 
   render() {
@@ -62,7 +80,11 @@ class Builder extends React.Component {
         >
           {tabs}
         </Tabs>
-        <Tab key={tabData} questions={this.state[tabData].questions}/>
+        <Tab key={tabData}
+             questions={this.state[tabData].questions}
+             selected={this.state[tabData].selected}
+             handleSelectQuestion = {this.onSelectQuestion}
+        />
       </Section>
     )
   }
