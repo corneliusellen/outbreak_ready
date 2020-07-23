@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Container } from 'react-bulma-components';
 import { Heading } from 'react-bulma-components';
@@ -26,18 +27,24 @@ class QuestionBank extends React.Component {
 
   render() {
     return(
-      <Section>
-        <Heading>
+      <Section className='dude'>
+        <Heading size={4}>
           Question Bank
         </Heading>
         <SearchBar
           filterText={this.state.filterText}
           onFilterTextChange={this.handleFilterTextChange}
         />
-        <QuestionList
-          filterText={this.state.filterText}
-          questions={this.props.questions}
-        />
+        <Droppable droppableId="droppable">
+          {(provided) => (
+            <QuestionList
+              filterText={this.state.filterText}
+              questions={this.props.questions}
+              provided={provided}
+              innerRef={provided.innerRef}
+            />
+          )}
+        </Droppable>
       </Section>
     )
   }
