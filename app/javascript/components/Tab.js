@@ -137,6 +137,7 @@ class Tab extends React.Component {
                                           <Answer
                                             type={question.answer_type}
                                             options={question.answer_options}
+                                            id={question.id}
                                           />
                                       </Box>
                                     </div>
