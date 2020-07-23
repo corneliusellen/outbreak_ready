@@ -19,13 +19,13 @@ class Question extends React.Component {
         {...provided.draggableProps}
         {...provided.dragHandleProps}
       >
-        <Section>
+        <div style={{paddingTop: 20}}>
           <Box>
             <p>
               {this.props.question.text}
             </p>
           </Box>
-        </Section>
+        </div>
       </div>
     )
   }

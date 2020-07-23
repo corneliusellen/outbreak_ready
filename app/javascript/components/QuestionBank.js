@@ -27,8 +27,8 @@ class QuestionBank extends React.Component {
 
   render() {
     return(
-      <Section>
-        <Heading>
+      <Section className='dude'>
+        <Heading size={4}>
           Question Bank
         </Heading>
         <SearchBar

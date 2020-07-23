@@ -11,6 +11,7 @@ import { Columns } from 'react-bulma-components';
 import { Box } from 'react-bulma-components';
 import { Tabs } from 'react-bulma-components';
 import QuestionBank from './QuestionBank.js';
+import Answer from './Answer.js';
 
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
@@ -98,12 +99,20 @@ class Tab extends React.Component {
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Columns>
           <Columns.Column
-            size="one-third">
+            size="one-third"
+            style={{backgroundColor: "#f2f2f2"}}>
             <QuestionBank questions={this.props.questions}/>
           </Columns.Column>
           <Columns.Column
             size="two-thirds"
           >
+          <Heading size={4}>
+            My Questionnaire
+          </Heading>
+          <Heading subtitle size={5}>
+            <em>{this.props.section}</em>
+          </Heading>
+          <div style={{border: "1px solid"}}>
             <Section>
               <Droppable droppableId="droppable2">
                 {(provided) => (
@@ -120,25 +129,27 @@ class Tab extends React.Component {
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}>
-                                    <Section>
+                                    <div style={{padding: 20}}>
                                       <Box>
                                         <p>
                                           {question.text}
                                         </p>
-                                        <p>
-                                          {question.answer_options[0]}
-                                        </p>
+                                          <Answer
+                                            type={question.answer_type}
+                                            options={question.answer_options}
+                                          />
                                       </Box>
-                                    </Section>
+                                    </div>
                                 </div>
-                            )}
-                          </Draggable>
-                        ))}
-                    {provided.placeholder}
-                    </div>
-                )}
-              </Droppable>
-            </Section>
+                              )}
+                            </Draggable>
+                          ))}
+                      {provided.placeholder}
+                      </div>
+                  )}
+                </Droppable>
+              </Section>
+            </div>
           </Columns.Column>
         </Columns>
       </DragDropContext>
