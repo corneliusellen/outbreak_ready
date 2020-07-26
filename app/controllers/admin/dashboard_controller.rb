@@ -3,7 +3,17 @@ module Admin
     def index; end
 
     def upload
-      binding.pry
+      @result = Services::CsvImporter.new(csv_contents).import!
+    end
+
+    private
+
+    def csv_contents
+      input_file.read
+    end
+
+    def input_file
+      params['file']
     end
   end
 end

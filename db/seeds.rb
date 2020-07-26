@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+tag_names = [:local, :event, :restaurant, :camp, :school, :childcare_or_preschool, :prison]
+
+tag_names.each do |name|
+  Tag.create!(name: name)
+end

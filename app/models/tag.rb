@@ -1,5 +1,5 @@
 class Tag < ApplicationRecord
-  enum type: {
+  enum name: {
               local: 0,
               event: 1,
               restaurant: 2,
