@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   get '/intake', to: 'intake#index'
   post '/intake', to: 'intake#create'
   get '/builder', to: 'builder#index'
+
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#index'
+    post '/dashboard', to: 'dashboard#upload'
+  end
 end

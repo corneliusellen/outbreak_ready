@@ -37,9 +37,16 @@ class Hello extends React.Component {
           </Container>
           <Container>
             <Section>
-              <Button className="button is-info" renderAs="a" href="/intake">
-                Begin Building
-              </Button>
+              <div style={{padding: 10}}>
+                <Button className="button is-info" renderAs="a" href="/admin/dashboard">
+                  Admin Dashboard
+                </Button>
+              </div>
+              <div style={{padding: 10}}>
+                <Button className="button is-info" renderAs="a" href="/intake">
+                  Begin Building
+                </Button>
+              </div>
             </Section>
           </Container>
         </Hero.Body>

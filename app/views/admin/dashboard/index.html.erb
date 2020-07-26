@@ -1,0 +1,19 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">File Upload</h1>
+      <%= form_tag({action: :upload}, multipart: true, method:'post') do %>
+      <div class="field">
+        <div>
+          <%= label_tag('input_file', 'Select a CSV to upload', class: 'label') %>
+          <%= file_field_tag 'file', required: true %>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <%= submit_tag('Submit', class: 'button is-primary') %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
