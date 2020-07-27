@@ -107,7 +107,7 @@ class Tab extends React.Component {
             size="two-thirds"
           >
           <Heading size={4}>
-            My Questionnaire
+            {this.props.title}
           </Heading>
           <Heading subtitle size={5}>
             <em>{this.props.section}</em>
