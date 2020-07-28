@@ -8,12 +8,14 @@ module Services
 
     def import!
       CSV.parse(file_contents, headers: true, header_converters: :symbol).each do |row|
+        id = row[:id]
         section = row[:section].gsub(/[0-9]/,'').downcase
         text = row[:question]
         mandatory = row[:mandatory] == 'Y' ? true : false
         answer_type = row[:field_type]&.downcase
         answer_choices = row[:choices_calculations_or_slider_labels]&.split('|')
         csv_tags = [row[:tag1],row[:tag2],row[:tag3],row[:tag4],row[:tag5],row[:tag6]].compact
+        parent_id = row[:question_group]
         redcap_metadata = {
                             variable_field_name: row[:variable_field_name],
                             form_name: row[:form_name],
@@ -33,12 +35,15 @@ module Services
                             field_annotation: row[:field_annotation]
                           }
 
-        question = Question.create!(section: section,
-                                   text: text,
-                                   mandatory: mandatory,
-                                   answer_type: answer_type,
-                                   answer_choices: answer_choices,
-                                   redcap_metadata: redcap_metadata)
+        question = Question.create!(id: id,
+                                    section: section,
+                                    text: text,
+                                    mandatory: mandatory,
+                                    answer_type: answer_type,
+                                    answer_choices: answer_choices,
+                                    redcap_metadata: redcap_metadata)
+
+        question.update!(parent_id: parent_id) if parent_id.present?
 
         next unless !csv_tags.empty?
 

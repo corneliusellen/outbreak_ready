@@ -11,11 +11,11 @@ class QuestionsController < ApplicationController
     tags = questionnaire.tags.pluck(:name)
     questions = []
 
-    questions << Question.select('questions.id, questions.text, questions.answer_type, questions.answer_choices, questions.section').joins(:tags).where(tags: { name: tags }).to_a
+    Question.includes(:children).select('questions.id, questions.text, questions.answer_type, questions.answer_choices, questions.section').joins(:tags).where(tags: { name: tags }).map{|q| { id: q.id, section: q.section, text: q.text, answer_type: q.answer_type, answer_choices: q.answer_choices, children: q.children.map{|child| { id: child.id, text: child.text, answer_type: child.answer_type, answer_choices: child.answer_choices, children: [] } } } }.each{ |question| questions << question }
 
-    questions << Question.select('questions.id, questions.text, questions.answer_type, questions.answer_choices, questions.section').joins(:tags).where("tags.name = ?", 'universal').to_a
+    Question.select('questions.id, questions.text, questions.answer_type, questions.answer_choices, questions.section').joins(:tags).where("tags.name = ?", 'universal').map{|q| { id: q.id, section: q.section, text: q.text, answer_type: q.answer_type, answer_choices: q.answer_choices, children: q.children.map{|child| { id: child.id, section: child.section, text: child.text, answer_type: child.answer_type, answer_choices: child.answer_choices, children: [] } } } }.each{ |question| questions << question }
 
-    tagged_questions = questions.flatten.uniq.group_by{|q| q.section}
+    tagged_questions = questions.group_by{ |q| q[:section] }
     { title: title, questions: tagged_questions }
   end
 

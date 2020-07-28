@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_043232) do
+ActiveRecord::Schema.define(version: 2020_07_28_164914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_043232) do
     t.integer "answer_type"
     t.text "answer_choices", default: [], array: true
     t.text "redcap_metadata"
+    t.integer "parent_id"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_043232) do
   add_foreign_key "intakes", "tags"
   add_foreign_key "questionnaire_questions", "questionnaires"
   add_foreign_key "questionnaire_questions", "questions"
+  add_foreign_key "questions", "questions", column: "parent_id"
   add_foreign_key "taggings", "questions"
   add_foreign_key "taggings", "tags"
 end

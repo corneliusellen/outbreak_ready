@@ -13,7 +13,7 @@ class GroupedQuestion extends React.Component {
     return(
       <div style={{paddingTop: 10}}>
         {this.props.question.text}
-        <Answer type={this.props.question.answer_type} options={this.props.question.answer_options} id={this.props.question.id} />
+        <Answer type={this.props.question.answer_type} choices={this.props.question.answer_choices} id={this.props.question.id} children={this.props.question.children}/>
       </div>
     )
   }
