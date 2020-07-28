@@ -8,54 +8,51 @@ import { Button } from 'react-bulma-components';
 import { Message } from 'react-bulma-components';
 import { Footer } from 'react-bulma-components';
 import { Tabs } from 'react-bulma-components';
+import axios from 'axios';
 import Tab from './Tab.js'
 
 class Builder extends React.Component {
   constructor(props) {
     super()
     this.state = {
+      title: null,
       contact: {
-        questions: props.questions.contact,
-        selected: []
-      },
-      instructions: {
-        questions: props.questions.instructions,
+        questions: [],
         selected: []
       },
       introduction: {
-        questions: props.questions.introduction,
+        questions: [],
         selected: []
       },
       screening: {
-        questions: props.questions.screening,
+        questions: [],
         selected: []
       },
       other: {
-        questions: props.questions.other,
+        questions: [],
         selected: []
       },
       symptoms: {
-        questions: props.questions.symptoms,
+        questions: [],
         selected: []
       },
       onset_duration: {
-        questions: props.questions.onset_duration,
+        questions: [],
         selected: []
       },
       outcomes: {
-        questions: props.questions.outcomes,
+        questions: [],
         selected: []
       },
       demographics: {
-        questions: props.questions.demographics,
+        questions: [],
         selected: []
       },
       exposure: {
-        questions: props.questions.exposure,
+        questions: [],
         selected: []
       },
       activeTab: [{name: "Contact", active: true},
-                  {name: "Instructions", active: false},
                   {name: "Introduction", active: false},
                   {name: "Screening", active: false},
                   {name: "Exposure", active: false},
@@ -69,6 +66,24 @@ class Builder extends React.Component {
 
     this.onSelectQuestion = this.onSelectQuestion.bind(this)
   };
+
+  componentDidMount() {
+    axios.get(`/questions?id=${this.props.id}`).then(
+      response => {
+        this.setState({ title: response.data.title,
+                        contact: { questions: response.data.questions.contact || [], selected: []  },
+                        introduction: { questions: response.data.questions.introduction || [], selected: []  },
+                        screening: { questions: response.data.questions.screening || [], selected: [] },
+                        other: { questions: response.data.questions.other || [], selected: [] },
+                        symptoms: { questions: response.data.questions.symptoms || [], selected: []  },
+                        onset_duration: { questions: response.data.questions.onset_duration || [], selected: [] },
+                        outcomes: { questions: response.data.questions.outcomes || [], selected: []  },
+                        demographics: { questions: response.data.questions.demographics || [] , selected: [] },
+                        exposure: { questions: response.data.questions.exposure || [], selected: []  }
+                     })
+      }
+    );
+  }
 
   onTabClick = (e) => {
     const clicked = e.target.innerText;
@@ -98,6 +113,24 @@ class Builder extends React.Component {
         return state
       }
     });
+  }
+
+  onSubmit = (e) => {
+    const selected = {
+                       contact: this.state.contact.selected,
+                       introduction: this.state.introduction.selected,
+                       screening: this.state.screening.selected,
+                       other: this.state.other.selected,
+                       symptoms: this.state.symptoms.selected,
+                       onset_duration: this.state.onset_duration.selected,
+                       outcomes: this.state.outcomes.selected,
+                       demographics: this.state.demographics.selected,
+                       exposure: this.state.exposure.selected,
+                     }
+    axios.put(`/questionnaire/${this.props.id}`, selected)
+      .then((result) => {
+        return;
+      })
   }
 
   render() {
@@ -134,9 +167,10 @@ class Builder extends React.Component {
              questions={this.state[tabData].questions}
              selected={this.state[tabData].selected}
              handleSelectQuestion = {this.onSelectQuestion}
+             title={this.state.title}
         />
         <Container align='right'>
-          <Button fullwidth={false} className="button is-info" renderAs="a" href="/builder">Review Questionnaire</Button>
+          <Button onClick={this.onSubmit} fullwidth={false} className="button is-info" renderAs="a" href={`/questionnaire/${this.props.id}`}>Review Questionnaire</Button>
         </Container>
       </Section>
     )

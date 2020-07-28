@@ -13,9 +13,9 @@ class Answer extends React.Component {
     let answer = []
 
     if (this.props.type == 'radio') {
-      this.props.options.forEach((option, index) => {
+      this.props.choices.forEach((choice, index) => {
         answer.push(
-          <Form.Radio key={this.props.id + option} readOnly={true} name={option}>{option}</Form.Radio>
+          <Form.Radio key={this.props.id + choice} readOnly={true} name={choice}>{choice}</Form.Radio>
         )
       })
     }
@@ -26,10 +26,10 @@ class Answer extends React.Component {
       )
     }
 
-    if (this.props.type == 'parent') {
-      this.props.options.forEach((option) => {
+    if (this.props.children.length > 0) {
+      this.props.children.forEach((child) => {
         answer.push (
-          <GroupedQuestion question={option} />
+          <GroupedQuestion question={child} />
         )
       })
     }

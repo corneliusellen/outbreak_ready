@@ -1,5 +1,5 @@
 class BuilderController < ApplicationController
   def index
-    @questions = DummyData::Questions.all
+    @id = params['id']
   end
 end

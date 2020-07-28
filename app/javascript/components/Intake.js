@@ -14,13 +14,13 @@ class Intake extends React.Component {
   constructor() {
     super()
     this.state = {
-      questionnaireName: '',
+      title: '',
       checkedTags: new Map()
     }
     this.onCheckboxChange = this.onCheckboxChange.bind(this)
   }
 
-  onQuestionnaireNameChange = (e) => {
+  onTitleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -34,13 +34,13 @@ class Intake extends React.Component {
   }
 
   onSubmit = (e) => {
-    const { questionnaireName, checkedTags } = this.state;
+    const { title, checkedTags } = this.state;
     const tags = []
     const filterCheckedTags = function(value,key,map){if (value == true) { tags.push(key) }}
 
     checkedTags.forEach(filterCheckedTags)
 
-    axios.post('/intake', { questionnaireName, tags })
+    axios.post(`/intake?id=${this.props.id}`, { title, tags })
       .then((result) => {
         return;
       });
@@ -123,7 +123,7 @@ class Intake extends React.Component {
                 4. Enter a name for your outbreak questionnaire:
               </Form.Label>
               <Form.Control>
-                <Form.Input onChange={this.onQuestionnaireNameChange} name="questionnaireName" type="text" placeholder="My amazing questionnaire" value={this.state.questionnaireName}/>
+                <Form.Input onChange={this.onTitleChange} name="title" type="text" placeholder="My amazing questionnaire" value={this.state.title}/>
               </Form.Control>
             </Form.Field>
             </Container>
@@ -135,7 +135,7 @@ class Intake extends React.Component {
                   <Button>Cancel</Button>
                 </Form.Control>
                 <Form.Control>
-                  <Button onClick={this.onSubmit} className="button is-info" renderAs="a" href="/builder">Submit</Button>
+                  <Button onClick={this.onSubmit} className="button is-info" renderAs="a" href={`/builder?id=${this.props.id}`}>Submit</Button>
                 </Form.Control>
               </Form.Field>
             </Container>

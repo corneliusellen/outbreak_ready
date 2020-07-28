@@ -24,16 +24,6 @@ module DummyData
             answer_type: 'text'
           }
         ],
-        instructions: [
-          {
-            id: 5,
-            text: "Instructions for interviewer:
-                   Complete one form for each individual
-                   For persons under the age of 18, interview the parent/guardian
-                   Mark an answer for each question. If the interviewee responds 'I don't know', mark 'Unknown'",
-            answer_type: 'instructions'
-          },
-        ],
         introduction: [
           {
             id: 6,
