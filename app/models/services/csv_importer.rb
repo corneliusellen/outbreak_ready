@@ -51,10 +51,12 @@ module Services
             puts "Question does not have valid tag: #{csv_tag}"
           end
         end
-
       end
 
       true
+
+    rescue StandardError
+      false
     end
 
     private

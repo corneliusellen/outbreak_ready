@@ -1,9 +1,17 @@
 module Admin
   class DashboardController < ApplicationController
-    def index; end
+    def index
+
+    end
 
     def upload
-      @result = Services::CsvImporter.new(csv_contents).import!
+      result = Services::CsvImporter.new(csv_contents).import!
+      if result
+        flash[:notice] = "CSV import successful!"
+      else
+        flash[:notice] = "CSV import failed."
+      end
+        redirect_to action: :index
     end
 
     private
