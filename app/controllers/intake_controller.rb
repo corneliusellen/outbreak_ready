@@ -17,7 +17,7 @@ class IntakeController < ApplicationController
 
   def create_intakes(questionnaire)
     selected_tags.each do |selected_tag|
-      tag = Tag.find_by_name(selected_tag.downcase)
+      tag = Tag.find_by_name(selected_tag)
       questionnaire.intakes.create!(tag: tag)
     end
   end

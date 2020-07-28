@@ -8,13 +8,14 @@ class QuestionsController < ApplicationController
 
   def format_data(questionnaire)
     title = questionnaire.title
-    tags = questionnaire.tags
+    tags = questionnaire.tags.pluck(:name)
     questions = []
-    tags.each do |tag|
-      questions << Question.select('questions.id, questions.text, questions.answer_type, questions.answer_choices, questions.section').joins(:tags).where("tags.name = ?", tag).to_a
-    end
 
-    tagged_questions = questions.flatten.group_by{|q| q.section}
+    questions << Question.select('questions.id, questions.text, questions.answer_type, questions.answer_choices, questions.section').joins(:tags).where(tags: { name: tags }).to_a
+
+    questions << Question.select('questions.id, questions.text, questions.answer_type, questions.answer_choices, questions.section').joins(:tags).where("tags.name = ?", 'universal').to_a
+
+    tagged_questions = questions.flatten.uniq.group_by{|q| q.section}
     { title: title, questions: tagged_questions }
   end
 
@@ -22,7 +23,7 @@ class QuestionsController < ApplicationController
     params['id']
   end
 
-  def tag_name_to_number(tag)
-    Tag.names[tag]
-  end
+  # def tag_name_to_number(tag)
+  #   Tag.names[tag]
+  # end
 end
