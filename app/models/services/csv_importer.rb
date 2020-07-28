@@ -43,9 +43,13 @@ module Services
         next unless !csv_tags.empty?
 
         csv_tags.each do |csv_tag|
-          name = csv_tag.downcase.gsub('/','_or_')
-          tag = Tag.find_by(name: name)
-          Tagging.create!(tag: tag, question: question)
+          tag = Tag.find_by(name: csv_tag)
+          if tag
+            Tagging.create!(tag: tag, question: question)
+          # TODO handle errors here
+          else
+            puts "Question does not have valid tag: #{csv_tag}"
+          end
         end
 
       end
