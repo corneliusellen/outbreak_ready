@@ -6,6 +6,7 @@ import { Hero } from 'react-bulma-components';
 import { Container } from 'react-bulma-components';
 import { Heading } from 'react-bulma-components';
 import { Section } from 'react-bulma-components';
+import { Image } from 'react-bulma-components';
 
 class Hello extends React.Component {
   render () {
@@ -13,6 +14,9 @@ class Hello extends React.Component {
       <Hero>
         <Hero.Body>
           <Container>
+            <Container style={{ width: 120 }}>
+              <Image src={this.props.img_src} />
+            </Container>
             <Heading>
               Outbreak Questionnaire Builder
             </Heading>
