@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Container } from 'react-bulma-components';
 import { Heading } from 'react-bulma-components';
 import { Section } from 'react-bulma-components';
@@ -134,7 +135,7 @@ class Intake extends React.Component {
                   <Button>Cancel</Button>
                 </Form.Control>
                 <Form.Control>
-                  <Button onClick={this.onSubmit} className="button" color="primary" renderAs="a" href={`/builder?id=${this.props.id}`}>Submit</Button>
+                  <Button onClick={this.onSubmit} className="button is-info" renderAs="a" href={`/builder?id=${this.props.id}`}>Submit</Button>
                 </Form.Control>
               </Form.Field>
             </Container>

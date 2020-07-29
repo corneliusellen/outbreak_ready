@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Container } from 'react-bulma-components';
 import { Heading } from 'react-bulma-components';
 import { Section } from 'react-bulma-components';
@@ -149,7 +150,7 @@ class Builder extends React.Component {
 
     return(
       <Section>
-        <Message color="primary">
+        <Message color="info">
           <Message.Header>
             Build your questionnaire by dragging and dropping questions into each section. If a section is left blank it will not be included.
           </Message.Header>
@@ -169,7 +170,7 @@ class Builder extends React.Component {
              title={this.state.title}
         />
         <Container align='right'>
-          <Button onClick={this.onSubmit} fullwidth={false} className="button is-primary" renderAs="a" href={`/questionnaire/${this.props.id}`}>Review Questionnaire</Button>
+          <Button onClick={this.onSubmit} fullwidth={false} className="button is-info" renderAs="a" href={`/questionnaire/${this.props.id}`}>Review Questionnaire</Button>
         </Container>
       </Section>
     )
