@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Form } from 'react-bulma-components';
 import GroupedQuestion from './GroupedQuestion.js';
 
