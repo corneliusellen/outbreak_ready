@@ -1,34 +1,42 @@
 {
-  "application.js": "/packs/js/application-7aaf83fc0ff360d5d3be.js",
-  "application.js.map": "/packs/js/application-7aaf83fc0ff360d5d3be.js.map",
+  "application.css": "/packs/css/application-b958f5c7.css",
+  "application.js": "/packs/js/application-0ceb8f3e925db1864941.js",
+  "application.js.map": "/packs/js/application-0ceb8f3e925db1864941.js.map",
   "entrypoints": {
     "application": {
+      "css": [
+        "/packs/css/application-b958f5c7.css"
+      ],
       "js": [
-        "/packs/js/application-7aaf83fc0ff360d5d3be.js"
+        "/packs/js/application-0ceb8f3e925db1864941.js"
       ],
       "js.map": [
-        "/packs/js/application-7aaf83fc0ff360d5d3be.js.map"
+        "/packs/js/application-0ceb8f3e925db1864941.js.map"
       ]
     },
     "hello_react": {
       "js": [
-        "/packs/js/hello_react-b9d36772081275851597.js"
+        "/packs/js/hello_react-ba34f3ab642c80fe148e.js"
       ],
       "js.map": [
-        "/packs/js/hello_react-b9d36772081275851597.js.map"
+        "/packs/js/hello_react-ba34f3ab642c80fe148e.js.map"
       ]
     },
     "server_rendering": {
+      "css": [
+        "/packs/css/server_rendering-b958f5c7.css"
+      ],
       "js": [
-        "/packs/js/server_rendering-ea69ad904a31d18c2315.js"
+        "/packs/js/server_rendering-7275b4f41880b14f6874.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-ea69ad904a31d18c2315.js.map"
+        "/packs/js/server_rendering-7275b4f41880b14f6874.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/js/hello_react-b9d36772081275851597.js",
-  "hello_react.js.map": "/packs/js/hello_react-b9d36772081275851597.js.map",
-  "server_rendering.js": "/packs/js/server_rendering-ea69ad904a31d18c2315.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-ea69ad904a31d18c2315.js.map"
+  "hello_react.js": "/packs/js/hello_react-ba34f3ab642c80fe148e.js",
+  "hello_react.js.map": "/packs/js/hello_react-ba34f3ab642c80fe148e.js.map",
+  "server_rendering.css": "/packs/css/server_rendering-b958f5c7.css",
+  "server_rendering.js": "/packs/js/server_rendering-7275b4f41880b14f6874.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-7275b4f41880b14f6874.js.map"
 }
