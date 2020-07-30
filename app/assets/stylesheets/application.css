@@ -383,6 +383,10 @@
    color: currentColor;
  }
 
+ a.is-danger {
+   color: #fff;
+ }
+
  a:hover {
    color: #363636;
  }

@@ -1,0 +1,51 @@
+<section class="section">
+   <div class="container">
+    <h1 class="title">
+      Imported Questions
+    </h1>
+    <br />
+    <% if @questions.empty? %>
+      <div>No questions have been imported!</div>
+    <% else %>
+    <div class="table-container">
+      <table class="table is-bordered if-fullwidth is-striped is-hoverable">
+        <thead>
+          <th>Delete</th>
+          <% @questions.first.attributes.keys.each do |header| %>
+            <th><%= String(header.titlecase) %></th>
+          <% end %>
+          <th>Tags</th>
+        </thead>
+        <tbody>
+          <% @questions.each do |question| %>
+            <tr>
+              <td align='center'><a class="delete" data-method="DELETE" href="/admin/dashboard/questions/<%= question.id %>"></a></td>
+              <% question.attributes.each do |k, v| %>
+                <td>
+                  <% if v.class == Array%>
+                    <%= v.join(';') %>
+                  <% elsif v.class == ActiveSupport::HashWithIndifferentAccess %>
+                    <%= v.map{|k,v| ["#{k}: #{v.to_s}"]}.join('; ') %>
+                  <% else %>
+                    <%= String(v) %>
+                  <% end %>
+                </td>
+              <% end %>
+              <td><%= String(question.tags.pluck(:name).join('; ').presence) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class="container">
+      <button class="button is-danger">
+        <a class="is-danger" style="text-decoration:none" data-confirm="Are you sure you want to delete All imported questions?" href="/admin/dashboard/questions/nuke">Delete all Questions</a>
+      </button>
+    </div>
+    <% end %>
+    <button class="button">
+      <a style="text-decoration:none" href="/admin/dashboard">Back</a>
+    </button>
+  </div>
+</section>
