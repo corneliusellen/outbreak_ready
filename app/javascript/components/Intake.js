@@ -85,13 +85,13 @@ class Intake extends React.Component {
                            checkedTags={this.state.checkedTags}
                            handleCheckboxChange={this.onCheckboxChange}
                            subQuestions={ [
-                                            { text: '1a. Suspected etiology - select all that apply:',
+                                            { text: '1a. Suspected or confirmed etiology - select all that apply:',
                                               options: [['Bacteria', ['Campylobacter jejuni','Clostridium botulinum','E. Coli','E. coli 0157:H7','Listeria monocytogenes','Salmonella','Shigella','Vibro parahaemolyticus','Vibro vulnificus']], ['Viral', ['Norovirus','Hepatitis A']], ['Parasite',['Cryptosporidium','Cyclospora cayetanensis','Giardia lamblia']], ['Toxin', ['Bacillus cereus','Clostridium perfringens','Staphyloccocus aureus']], ['Chemical'], ['Other']],
                                               type: 'Checkbox',
                                               logic: 0
                                             },
                                             { text: '1a. Suspected transmission route - select all that apply:',
-                                              options: [['Foodborne'], ['Waterborne',['Drinking Water','Recreational water']], ['Person-to-person'], ['Sexual'], ['Animal', ['Poultry','Reptiles','Amphibians','Mouse/rat','Zoo','Farm','Hatchery','Feeder rodents','Petting zoo','Dogs']], ['Environmental'], ['Unknown']],
+                                              options: [['Foodborne'], ['Waterborne',['Drinking Water','Recreational water']], ['Person-to-person'], ['Sexual'], ['Animal contact', ['Poultry','Reptiles','Amphibians','Mouse/rat','Zoo','Farm','Hatchery','Petting zoo','Rodents','Dogs']], ['Environmental'], ['Unknown']],
                                               type: 'Checkbox',
                                               logic: 1
                                             }
@@ -109,12 +109,12 @@ class Intake extends React.Component {
                            type= 'RadioGroup'
                            subQuestions={ [
                                             { text: '2a. Suspected setting-select all that apply:',
-                                              options: [['Restaurant',['Type - Sit-down','Type - Buffet','Type - Fast food','Type - Mobile food truck','Style - American','Style - Sushi','Style - Italian','Style - Mexican','Style - Sandwich or deli','Style - Brunch','Style - Tavern','Style - Pizzeria','Style - Burger']], ['School or childcare', ['Childcare/preschool','Elementary','Middle school/high school','College']], ['Camp'],['Campground'],['Farm'],['Institution', ['Long-term care facility','Hospital','Prison','Homeless shelter']],['Event',['Professionally catered','Wedding','Potluck','Picnic','Barbeque','Sporting','Fair/festival','Conference/meeting']],['Adult arcades and bath houses'],['Stock show']],
+                                              options: [['Restaurant',['Type - Sit-down','Type - Buffet','Type - Fast food','Type - Mobile food truck','Type - Take-out','Style - American','Style - Sushi','Style - Italian','Style - Mexican','Style - Sandwich or deli','Style - Brunch','Style - Tavern','Style - Pizzeria','Style - Burger','Style - Asian','Style - Seafood']], ['School or childcare', ['Childcare/preschool','Elementary','Middle school/high school','College']], ['Camp'],['Campground'],['Farm/ranch'],['Institution', ['Long-term care facility','Hospital','Prison/jail','Homeless shelter']],['Event',['Professionally catered','Wedding','Potluck','Picnic','Barbeque','Sporting','Fair/festival','Conference/meeting']],['Adult arcades and bath houses'],['Stock show']],
                                               type: 'Checkbox',
                                               logic: 0
                                             },
                                             { text: '2a. Do you suspect any specific foods or dietary patterns? (check all that apply)',
-                                              options: [['Fish',['Sushi']],['Shellfish',['Oysters']],['Dairy',['Cheese','Fluid milk']],['Game'],['Meat',['Pork','Poultry - general','Chicken','Turkey']],['Eggs'],['Fruit'],['Vegetables'],['Grains'],['Beans'],['Nuts/seeds'],['Raw cookie dough/flour'],['Smoothies'],['BBQ'],['Mexican'],['Health supplements'],['Caramel apples'],['Healthy eater'],['Toddler foods']],
+                                              options: [['Fish',['Sushi']],['Shellfish',['Oysters']],['Dairy',['Cheese','Fluid milk','Ice cream','Yogurt']],['Game'],['Meat',['Pork','Poultry - general','Chicken','Turkey']],['Eggs'],['Fruit'],['Vegetables'],['Grains'],['Beans'],['Nuts/seeds'],['Raw cookie dough/flour'],['Smoothies'],['BBQ'],['Mexican'],['Health supplements'],['Caramel apples'],['Healthy eater'],['Toddler foods'],['Vegetarian/vegan']],
                                               type: 'Checkbox',
                                               logic: 1
                                             }
@@ -126,7 +126,7 @@ class Intake extends React.Component {
         <Section>
           <Container>
             <SubQuestion subQuestion={ { text: "3. Do you want to include additional questions on any of the following topics? (check all that apply)",
-                  options: [['Cannabis use'],['Sexual history'],['Illicit drug use']],
+                  options: [['Cannabis use'],['Sexual history'],['Illicit drug use'],['People experiencing homelessness']],
                   type: 'Checkbox',
                   logic: 1
                 } } parent={true}
