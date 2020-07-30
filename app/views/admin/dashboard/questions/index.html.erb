@@ -1,0 +1,30 @@
+<section class="section">
+   <div class="container is-fluid">
+    <h1 class="title">
+      Imported Questions
+    </h1>
+    <br />
+    <div class="container_with_scroll">
+      <table class="table is-bordered if-fullwidth is-striped is-hoverable">
+        <thead>
+          <% @questions.first.attributes.keys.each do |header| %>
+            <th><%= String(header.titlecase) %></th>
+          <% end %>
+          <th>Tags</th>
+        </thead>
+        <tbody>
+          <% @questions.each do |question| %>
+            <tr>
+              <% question.attributes.each do |k, v| %>
+                <td>
+                  <%= String(v) %>
+                </td>
+              <% end %>
+              <td><%= String(question.tags.pluck(:name).join(', ').presence) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

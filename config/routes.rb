@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
     post '/dashboard', to: 'dashboard#upload'
+
+    namespace :dashboard do
+      resources :questions, only: [:index, :destroy]
+    end
   end
 end
