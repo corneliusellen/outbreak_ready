@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
     namespace :dashboard do
       resources :questions, only: [:index, :destroy]
+      get '/questions/nuke', to: 'questions#nuke'
     end
   end
 end
