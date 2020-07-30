@@ -36,7 +36,7 @@ Lake/reservoir/beach
 River/lake
 Person-to-person
 Sexual
-Animal
+Animal contact
 Poultry
 Baby poultry
 Adult poultry
@@ -47,26 +47,29 @@ Mouse/rat
 Zoo
 Farm
 Hatchery
-Feeder rodents
 Petting zoo
+Rodents
 Dogs
 Environmental
 Local
 Dispersed
 Restaurant
-Sit-down
-Buffet
-Fast food
-Mobile food truck
-American
-Sushi
-Italian
-Mexican
-Sandwich or deli
-Brunch
-Tavern
-Pizzeria
-Burger
+Type - Sit-down
+Type - Buffet
+Type - Fast food
+Type - Mobile food truck
+Type - Take-out
+Style - American
+Style - Sushi
+Style - Italian
+Style - Mexican
+Style - Sandwich or deli
+Style - Brunch
+Style - Tavern
+Style - Pizzeria
+Style - Burger
+Style - Asian
+Style - Seafood
 School
 Childcare/preschool
 Elementary
@@ -74,11 +77,11 @@ Middle school/high school
 College
 Camp
 Campground
-Farm
+Farm/ranch
 Institution
 Long-term care facility
 Hospital
-Prison
+Prison/jail
 Homeless shelter
 Event
 Professionally catered
@@ -98,6 +101,8 @@ Oysters
 Dairy
 Cheese
 Fluid milk
+Ice cream
+Yogurt
 Game
 Meat
 Pork
@@ -118,7 +123,9 @@ Health supplements
 Carmel apples
 Healthy eater
 Toddler foods
+Vegetarian/vegan
 Cannabis use
 Sexual history
 Illicit drug use
+People experiencing homelessness
 universal

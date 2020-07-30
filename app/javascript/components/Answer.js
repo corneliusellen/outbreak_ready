@@ -19,7 +19,15 @@ class Answer extends React.Component {
       })
     }
 
-    if (this.props.type == 'text') {
+    if (this.props.type == 'checkbox') {
+      this.props.choices.forEach((choice, index) => {
+        answer.push(
+          <Form.Checkbox key={this.props.id + choice} readOnly={true} name={choice}>{choice} checked={false}</Form.Checkbox>
+        )
+      })
+    }
+
+    if (this.props.type == 'text' || this.props.type == 'number') {
       answer.push (
           <Form.Input readOnly={true} type="text" name="blank_input"></Form.Input>
       )
