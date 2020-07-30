@@ -13,15 +13,17 @@
         <div class="control">
           <%= submit_tag('Submit', class: 'button is-primary') %>
         </div>
+        <button class="button">
+          <a style="text-decoration:none" href="/">Back</a>
+        </button>
       </div>
-    <% end %>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
   </div>
 </section>
 <section class="section">
-  <button class="button is-info">
-    <a style="text-decoration:none" href="/">Back</a>
-  </button>
+  <div class="container">
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
 </section>
