@@ -374,7 +374,7 @@
  }
 
  a {
-   color: #3273dc;
+   color: #007a4b;
    cursor: pointer;
    text-decoration: none;
  }
@@ -1988,7 +1988,7 @@
  }
 
  .button.is-dark {
-   background-color: #363636;
+   background-color: #83b47f;
    border-color: transparent;
    color: #fff;
  }
@@ -6208,16 +6208,16 @@
  }
 
  .message.is-primary {
-   background-color: #ebfffc;
+   background-color: #007a4b;
  }
 
  .message.is-primary .message-header {
-   background-color: #00d1b2;
+   background-color: #007a4b;
    color: #fff;
  }
 
  .message.is-primary .message-body {
-   border-color: #00d1b2;
+   border-color: #007a4b;
    color: #00947e;
  }
 
@@ -7946,8 +7946,8 @@
  }
 
  .tabs li.is-active a {
-   border-bottom-color: #3273dc;
-   color: #3273dc;
+   border-bottom-color: #007a4b;
+   color: #007a4b;
  }
 
  .tabs ul {
@@ -10433,7 +10433,7 @@
  .hero.is-link .tabs.is-boxed li.is-active a, .hero.is-link .tabs.is-boxed li.is-active a:hover, .hero.is-link .tabs.is-toggle li.is-active a, .hero.is-link .tabs.is-toggle li.is-active a:hover {
    background-color: #fff;
    border-color: #fff;
-   color: #3273dc;
+   color: #83b47f;
  }
 
  .hero.is-link.is-bold {

@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Container } from 'react-bulma-components';
 import { Heading } from 'react-bulma-components';
 import { Section } from 'react-bulma-components';
 import { Form } from 'react-bulma-components';
 import { Button } from 'react-bulma-components';
+import { Hero } from 'react-bulma-components';
+import { Columns } from 'react-bulma-components';
+import { Image } from 'react-bulma-components';
 import axios from 'axios';
 import QuestionGroup from './QuestionGroup.js';
 import SubQuestion from './SubQuestion.js';
@@ -50,8 +52,24 @@ class Intake extends React.Component {
     return(
       <div>
         <Section>
+          <Hero color="primary" gradient>
+            <Hero.Body style={{padding: 15}} >
+              <Columns className="is-vcentered">
+                <Columns.Column>
+                  <Heading>
+                    Outbreak Questionnaire Builder
+                  </Heading>
+                </Columns.Column>
+                <Columns.Column size="one-fifth">
+                  <Container style={{ width: 120 }}>
+                    <Image src={this.props.img_src} />
+                  </Container>
+                </Columns.Column>
+              </Columns>
+            </Hero.Body>
+          </Hero>
           <Container>
-            <Heading>
+            <Heading style={{marginTop: 20}}>
               Intake Form
             </Heading>
             <Heading subtitle>
@@ -135,7 +153,7 @@ class Intake extends React.Component {
                   <Button>Cancel</Button>
                 </Form.Control>
                 <Form.Control>
-                  <Button onClick={this.onSubmit} className="button is-info" renderAs="a" href={`/builder?id=${this.props.id}`}>Submit</Button>
+                  <Button onClick={this.onSubmit} className="button" color="primary" renderAs="a" href={`/builder?id=${this.props.id}`}>Submit</Button>
                 </Form.Control>
               </Form.Field>
             </Container>
