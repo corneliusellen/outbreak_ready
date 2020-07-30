@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Button } from 'react-bulma-components';
 import { Hero } from 'react-bulma-components';
 import { Container } from 'react-bulma-components';
@@ -11,7 +10,7 @@ import { Image } from 'react-bulma-components';
 class Hello extends React.Component {
   render () {
     return (
-      <Hero>
+      <Hero color="primary" gradient>
         <Hero.Body>
           <Container>
             <Container style={{ width: 120 }}>
@@ -42,12 +41,12 @@ class Hello extends React.Component {
           <Container>
             <Section>
               <div style={{padding: 10}}>
-                <Button className="button is-info" renderAs="a" href="/admin/dashboard">
+                <Button className="button" color="primary" renderAs="a" href="/admin/dashboard">
                   Admin Dashboard
                 </Button>
               </div>
               <div style={{padding: 10}}>
-                <Button className="button is-info" renderAs="a" href="/intake">
+                <Button className="button" color="primary" renderAs="a" href="/intake">
                   Begin Building
                 </Button>
               </div>
