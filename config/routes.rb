@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
     post '/dashboard', to: 'dashboard#upload'
+    get '/dashboard/sample_csv', to: 'dashboard#sample_csv'
 
     namespace :dashboard do
+      resources :tags
       resources :questions, only: [:index, :destroy]
       get '/questions/nuke', to: 'questions#nuke'
     end

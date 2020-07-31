@@ -283,7 +283,7 @@
  }
 
  ul {
-   list-style: none;
+
  }
 
  button,
@@ -318,7 +318,8 @@
 
  td,
  th {
-   padding: 0;
+   min-width: 300px;
+   padding: 5;
  }
 
  td:not([align]),
