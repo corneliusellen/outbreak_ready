@@ -7,5 +7,6 @@ class QuestionnaireController < ApplicationController
 
   def show
     @id = params['id']
+    @title = Questionnaire.find(@id).title
   end
 end
