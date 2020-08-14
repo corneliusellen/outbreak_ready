@@ -7,6 +7,10 @@ class QuestionnaireController < ApplicationController
 
   def show
     @id = params['id']
-    @title = Questionnaire.find(@id).title
+    questionnaire = Questionnaire.find(@id)
+    @title = questionnaire.title
+    # @questions = questionnaire.questions
+    questions = Question.where(answer_type: 'instructions') +  Question.where(answer_type: 'checkbox')+ Question.first(3) + Question.last(3)
+    @sections = questions.group_by{ |q| q.section }
   end
 end
