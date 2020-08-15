@@ -73,15 +73,15 @@ class Builder extends React.Component {
     axios.get(`/questions?id=${this.props.id}`).then(
       response => {
         this.setState({ title: response.data.title,
-                        contact: { questions: response.data.questions.contact || [], selected: []  },
-                        introduction: { questions: response.data.questions.introduction || [], selected: []  },
-                        screening: { questions: response.data.questions.screening || [], selected: [] },
-                        other: { questions: response.data.questions.other || [], selected: [] },
-                        symptoms: { questions: response.data.questions.symptoms || [], selected: []  },
-                        onset_duration: { questions: response.data.questions.onset_duration || [], selected: [] },
-                        outcomes: { questions: response.data.questions.outcomes || [], selected: []  },
-                        demographics: { questions: response.data.questions.demographics || [] , selected: [] },
-                        exposure: { questions: response.data.questions.exposure || [], selected: []  }
+                        contact: { questions: response.data.questions.contact?.recommended || [], selected: response.data.questions.contact?.mandatory || []  },
+                        introduction: { questions: response.data.questions.introduction?.recommended || [], selected: response.data.questions.introduction?.mandatory || []  },
+                        screening: { questions: response.data.questions.screening?.recommended || [], selected: response.data.questions.screening?.mandatory || [] },
+                        other: { questions: response.data.questions.other?.recommended || [], selected: response.data.questions.other?.mandatory || [] },
+                        symptoms: { questions: response.data.questions.symptoms?.recommended || [], selected: response.data.questions.symptoms?.mandatory  },
+                        onset_duration: { questions: response.data.questions.onset_duration?.recommended || [], selected: response.data.questions.onset_duration?.mandatory || []},
+                        outcomes: { questions: response.data.questions.outcomes?.recommended || [], selected: response.data.questions.outcomes?.mandatory  || []},
+                        demographics: { questions: response.data.questions.demographics?.recommended || [] , selected: response.data.questions.demographics?.mandatory || []},
+                        exposure: { questions: response.data.questions.exposure?.recommended || [], selected: response.data.questions.exposure?.mandatory  || []}
                      })
       }
     );
@@ -118,17 +118,18 @@ class Builder extends React.Component {
   }
 
   onSubmit = (e) => {
-    const selected = {
-                       contact: this.state.contact.selected,
-                       introduction: this.state.introduction.selected,
-                       screening: this.state.screening.selected,
-                       other: this.state.other.selected,
-                       symptoms: this.state.symptoms.selected,
-                       onset_duration: this.state.onset_duration.selected,
-                       outcomes: this.state.outcomes.selected,
-                       demographics: this.state.demographics.selected,
-                       exposure: this.state.exposure.selected,
-                     }
+    const selected = { questionnaire_questions: [
+                        this.state.contact.selected,
+                        this.state.introduction.selected,
+                        this.state.screening.selected,
+                        this.state.other.selected,
+                        this.state.symptoms.selected,
+                        this.state.onset_duration.selected,
+                        this.state.outcomes.selected,
+                        this.state.demographics.selected,
+                        this.state.exposure.selected,
+                        ]
+                      }
     axios.put(`/questionnaire/${this.props.id}`, selected)
       .then((result) => {
         return;
@@ -173,12 +174,23 @@ class Builder extends React.Component {
             <Columns className="is-vcentered">
               <Columns.Column size="two-thirds">
                 <Message.Header>
-                  Build your questionnaire by dragging and dropping questions into each section. If a section is left blank it will not be included.
+                  Directions:
                 </Message.Header>
+                <Message.Body>
+                  <li>
+                    Build your questionnaire by dragging and dropping the <em>Recommended Questions</em> into each section on the right. If a section is left blank it will not be included.
+                  </li>
+                  <li>
+                    Items highlighted in gray are standard and are already included on your questionnaire. It is advised that you do not remove them.
+                  </li>
+                  <li>
+                    Some questions have tags (highlighted in green) which indicate a question's relavance to a type of outbreak.
+                  </li>
+                </Message.Body>
               </Columns.Column>
               <Columns.Column align='right'>
                 <Button style={{margin: 15}} onClick={this.onSubmit} fullwidth={false} className="button is-dark" renderAs="a" href={`/questionnaire/${this.props.id}`}>
-                  Finished? Review Questionnaire
+                  Finished? Export Questionnaire
                 </Button>
               </Columns.Column>
             </Columns>

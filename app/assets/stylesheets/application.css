@@ -1593,6 +1593,11 @@
 
  }
 
+ .box.default-question {
+   background-color: #ECECEC;
+
+ }
+
  a.box:hover, a.box:focus {
    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc;
  }
@@ -6180,6 +6185,7 @@
 
  .message.is-white .message-body {
    border-color: white;
+   color: #0a0a0a;
  }
 
  .message.is-black {
@@ -6232,7 +6238,7 @@
 
  .message.is-primary .message-body {
    border-color: #007a4b;
-   color: #00947e;
+   color: white;
  }
 
  .message.is-link {
@@ -6314,7 +6320,7 @@
    font-weight: 700;
    justify-content: space-between;
    line-height: 1.25;
-   padding: 0.75em 1em;
+   padding: 0.5em 1em;
    position: relative;
  }
 
@@ -6335,8 +6341,8 @@
    border-radius: 4px;
    border-style: solid;
    border-width: 0 0 0 4px;
-   color: #4a4a4a;
-   padding: 1.25em 1.5em;
+   color: white;
+   padding: 0.25em 1.5em;
  }
 
  .message-body code,

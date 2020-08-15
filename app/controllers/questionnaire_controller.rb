@@ -2,15 +2,32 @@ class QuestionnaireController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def update
-
+    questionnaire_id = Questionnaire.find(required_params[:id]).id
+    question_ids = required_params[:questionnaire_questions].flatten.map{ |qq| qq[:id] }
+    question_ids.each{ |id| QuestionnaireQuestion.create!(question_id: id, questionnaire_id: questionnaire_id) }
   end
 
   def show
+    sleep 2
     @id = params['id']
     questionnaire = Questionnaire.find(@id)
     @title = questionnaire.title
-    # @questions = questionnaire.questions
-    questions = Question.where(answer_type: 'instructions') +  Question.where(answer_type: 'checkbox')+ Question.first(3) + Question.last(3)
-    @sections = questions.group_by{ |q| q.section }
+    questions = questionnaire.questions.includes(:children)
+    mapped_with_children = questions.map{ |q| { section: q.section,
+                                                text: q.text,
+                                                answer_type: q.answer_type,
+                                                answer_choices: q.answer_choices,
+                                                children: q.children.map{ |child| { text: child.text,
+                                                                                    answer_type: child.answer_type,
+                                                                                    answer_choices: child.answer_choices,
+                                                                                    children: []
+                                                                                  }}}}
+    @sections = mapped_with_children.group_by{ |q| q[:section] }
+  end
+
+  private
+
+  def required_params
+    params.permit!
   end
 end

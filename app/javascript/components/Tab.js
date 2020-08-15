@@ -129,7 +129,7 @@ class Tab extends React.Component {
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}>
                                     <div style={{padding: 20}}>
-                                      <Box>
+                                      <Box className={`${question.mandatory == "mandatory" ? "default-question" : ""}`}>
                                         <p>
                                           {question.text}
                                         </p>
