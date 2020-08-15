@@ -6,7 +6,7 @@ import { Heading } from 'react-bulma-components';
 import { Section } from 'react-bulma-components';
 import { Button } from 'react-bulma-components';
 import { Packer } from "docx";
-import { Document, Paragraph, TextRun, PageBreak, HeadingLevel } from "docx";
+import { Document, Paragraph, TextRun, PageBreak, HeadingLevel, PageNumber, Header, AlignmentType } from "docx";
 import { saveAs } from "file-saver";
 
 class ReviewQuestionnaire extends React.Component {
@@ -28,25 +28,12 @@ class ReviewQuestionnaire extends React.Component {
           {
             id: "normal",
             name: "normal",
-            basedOn: "Normal",
-            next: "Normal",
-            quickFormat: true,
-            paragraph: {
-              spacing: {
-                  after: 120
-              },
-            }
-          },
-          {
-            id: "normalBold",
-            basedOn: "Body",
-            next: "Normal",
             run: {
-              bold: true
+              size: 24,
             },
             paragraph: {
               spacing: {
-                  after: 120
+                after: 130
               },
             }
           }
@@ -54,30 +41,56 @@ class ReviewQuestionnaire extends React.Component {
       }
     });
     doc.addSection({
-        children: [
-          new docx.Paragraph({
-            text: `${title}`,
-            heading: docx.HeadingLevel.HEADING_1,
-          }),
-          new docx.Paragraph({
+      headers: {
+        default: new docx.Header({
+          children: [
+            new docx.Paragraph({
               children: [
                 new docx.TextRun({
-                  text: "Your customized questionnaire starts on the next page. Modify this questionnaire to fit your needs. Copy the reference calendars below as needed. Delete this page before creating a final PDF questionnaire."
+                  font: "Times New Roman",
+                  children: ["Page: ", docx.PageNumber.CURRENT],
                 }),
-              ],
-              style: "normal"
-          }),
-          new docx.Paragraph({
-              children: [
                 new docx.TextRun({
-                  text: "2020 Reference Calendars"
-                }),
-                new docx.PageBreak()
+                  font: "Times New Roman",
+                  children: "                                                Name or ID _____________________________"
+                })
               ],
-              style: "normalBold"
-          }),
-          ...this.mapSections(),
-        ],
+            })
+          ],
+        }),
+      },
+      children: [
+        new docx.Paragraph({
+          text: `${title}`,
+          heading: docx.HeadingLevel.HEADING_1,
+        }),
+        new docx.Paragraph({
+            children: [
+              new docx.TextRun({
+                text: "Your customized questionnaire starts on the next page. Modify this questionnaire to fit your needs. Copy the reference calendars below as needed. Delete this page before creating a final PDF questionnaire."
+              }),
+            ],
+            style: "normal"
+        }),
+        new docx.Paragraph({
+            children: [
+              new docx.TextRun({
+                text: "2020 Reference Calendars",
+                bold: true
+              }),
+              new docx.PageBreak()
+            ],
+            style: "normal"
+        }),
+        new docx.Paragraph({
+          text: `${title}`,
+          heading: docx.HeadingLevel.TITLE,
+          run: {
+            size: 24
+          },
+        }),
+        ...this.mapSections(),
+      ],
     });
 
     return doc;
@@ -95,7 +108,7 @@ class ReviewQuestionnaire extends React.Component {
     return(
       [
         new docx.Paragraph({
-          text: `${section[0]}`,
+          text: `${section[0].charAt(0).toUpperCase() + section[0].replace('_', ' ').slice(1)}`,
           heading: docx.HeadingLevel.HEADING_1,
         }),
         this.sectionQuestions(section[1])
@@ -107,31 +120,27 @@ class ReviewQuestionnaire extends React.Component {
     return(
       new docx.Paragraph({
           children: this.questionList(questions),
-          style: "normalBold",
+          style: "normal",
           border: {
            top: {
                color: "auto",
-               space: 1,
                value: "single",
-               size: 6,
+               size: 5,
            },
            bottom: {
                color: "auto",
-               space: 1,
                value: "single",
-               size: 6,
+               size: 5,
            },
            left: {
                color: "auto",
-               space: 1,
                value: "single",
-               size: 6,
+               size: 5,
            },
            right: {
                color: "auto",
-               space: 1,
                value: "single",
-               size: 6,
+               size: 5,
            }
          }
       })
@@ -145,14 +154,14 @@ class ReviewQuestionnaire extends React.Component {
             [
               this.question(q),
               ...this.sortQuestionsWithChildren(q)
-            ]
+            ].reduce((prev, curr) => prev.concat(curr), [])
           )
       } else {
         return(
             [
               this.question(q),
               this.sortQuestionsWithChildren(q)
-            ]
+            ].reduce((prev, curr) => prev.concat(curr), [])
           )
         }
       }).reduce((prev, curr) => prev.concat(curr), [])
@@ -160,12 +169,19 @@ class ReviewQuestionnaire extends React.Component {
   }
 
   question(q) {
-    if (q.answer_type == "instructions" || q.answer_type == "header") {
+    if (q.answer_type == "instructions") {
       return(
           new docx.TextRun({
           text: `${q.text}`,
           italics: true
-        }).break()
+        })
+      )
+    } else if (q.answer_type == "header"){
+      return(
+          new docx.TextRun({
+            text: `${q.text}`,
+            bold: true
+          })
       )
     } else {
       return(
@@ -220,6 +236,13 @@ class ReviewQuestionnaire extends React.Component {
           text: '                                                ',
           underline: {}
         })
+      )
+    }
+    else {
+      return(
+          new docx.TextRun({
+          text: ''
+        }).break()
       )
     }
   }
