@@ -2,9 +2,10 @@ class QuestionnaireController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def update
-    questionnaire_id = Questionnaire.find(required_params[:id]).id
+    questionnaire = Questionnaire.find(required_params[:id])
+    questionnaire.questionnaire_questions.destroy_all
     question_ids = required_params[:questionnaire_questions].flatten.map{ |qq| qq[:id] }
-    question_ids.each{ |id| QuestionnaireQuestion.create!(question_id: id, questionnaire_id: questionnaire_id) }
+    question_ids.each{ |id| QuestionnaireQuestion.create!(question_id: id, questionnaire_id: questionnaire.id) }
   end
 
   def show
