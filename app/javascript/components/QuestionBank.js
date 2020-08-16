@@ -28,7 +28,7 @@ class QuestionBank extends React.Component {
     return(
       <Section className='dude'>
         <Heading size={4}>
-          Question Bank
+          Recommended Questions
         </Heading>
         <SearchBar
           filterText={this.state.filterText}

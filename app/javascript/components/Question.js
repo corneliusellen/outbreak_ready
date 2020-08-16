@@ -36,7 +36,7 @@ class Question extends React.Component {
         {...provided.dragHandleProps}
       >
         <div style={{paddingTop: 20}}>
-          <Box>
+          <Box className={`${this.props.question.mandatory == "mandatory" ? "default-question" : ""}`}>
             <p>
               {this.props.question.text}
             </p>

@@ -11,7 +11,7 @@ module Services
         id = row[:id]
         section = row[:section].gsub(/[0-9]/,'').downcase
         text = row[:question]
-        mandatory = row[:mandatory] == 'Y' ? true : false
+        mandatory = row[:mandatory] == 'Y' ? 'mandatory' : 'recommended'
         answer_type = row[:field_type]&.downcase
         answer_choices = row[:choices_calculations_or_slider_labels]&.split('|')
         csv_tags = [row[:tag1],row[:tag2],row[:tag3],row[:tag4],row[:tag5],row[:tag6]].compact
