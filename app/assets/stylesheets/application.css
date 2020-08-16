@@ -31,6 +31,14 @@
    }
  }
 
+ .html-link {
+   display: inline-block;
+   text-decoration:none;
+   position: relative;
+   padding: 1em;
+   margin: -1em;
+ }
+
  .delete, .modal-close, .is-unselectable, .button, .file, .breadcrumb, .pagination-previous,
  .pagination-next,
  .pagination-link,

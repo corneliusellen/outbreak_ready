@@ -39,13 +39,15 @@
     </div>
     <br />
     <div class="container">
-      <button class="button is-danger">
-        <a class="is-danger" style="text-decoration:none" data-confirm="Are you sure you want to delete All imported questions?" href="/admin/dashboard/questions/nuke">Delete all Questions</a>
-      </button>
+      <div class="field is-grouped">
+        <button class="button is-danger">
+          <a class="html-link is-danger" data-confirm="Are you sure you want to delete All imported questions?" href="/admin/dashboard/questions/nuke">Delete all Questions</a>
+        </button>
+        <button class="button">
+          <a class="html-link" href="/admin/dashboard">Back</a>
+        </button>
+      </div>
     </div>
     <% end %>
-    <button class="button">
-      <a style="text-decoration:none" href="/admin/dashboard">Back</a>
-    </button>
   </div>
 </section>
