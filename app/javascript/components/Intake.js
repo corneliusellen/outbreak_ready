@@ -76,8 +76,8 @@ class Intake extends React.Component {
               Input your outbreak details into the following form. Your questionnaire will populate with instructions and questions based on the information you put into the form.
             </Heading>
             <p>
-              If you don't see your specific category listed, please contact the Colorado
-               Integrated Food Safety Center of Excellence.
+              <em>If you don't see your specific category listed, please contact the Colorado
+               Integrated Food Safety Center of Excellence.</em>
             </p>
           </Container>
         </Section>

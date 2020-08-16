@@ -5,6 +5,9 @@ import { Container } from 'react-bulma-components';
 import { Heading } from 'react-bulma-components';
 import { Section } from 'react-bulma-components';
 import { Button } from 'react-bulma-components';
+import { Hero } from 'react-bulma-components';
+import { Columns } from 'react-bulma-components';
+import { Image } from 'react-bulma-components';
 import { Packer } from "docx";
 import { Document, Paragraph, TextRun, PageBreak, HeadingLevel, PageNumber, Header, AlignmentType } from "docx";
 import { saveAs } from "file-saver";
@@ -262,12 +265,36 @@ class ReviewQuestionnaire extends React.Component {
   render() {
     return(
       <Section>
-        <div style={{padding: 10}}>
-          <Button onClick={this.generateWord} className="button" color="primary" renderAs="a">Download Word Document</Button>
-        </div>
-        <div style={{padding: 10}}>
-          <Button onClick={this.generateRedcap} className="button" color="primary" renderAs="a">Download Redcap Schema</Button>
-        </div>
+        <Hero color="primary" gradient>
+          <Hero.Body style={{padding: 15}} >
+            <Columns className="is-vcentered">
+              <Columns.Column>
+                <Heading>
+                  Outbreak Questionnaire Builder
+                </Heading>
+              </Columns.Column>
+              <Columns.Column size="one-fifth">
+                <Container style={{ width: 120 }}>
+                  <Image src={this.props.img_src} />
+                </Container>
+              </Columns.Column>
+            </Columns>
+          </Hero.Body>
+        </Hero>
+        <Container>
+          <p style={{padding: 10}}>
+            Your <em>{`${this.props.title}`}</em> questionnaire was created successfully!
+          </p>
+          <div style={{padding: 10}}>
+            <Button onClick={this.generateWord} className="button" color="primary" renderAs="a">Download Word Document</Button>
+          </div>
+          <div style={{padding: 10}}>
+            <Button onClick={this.generateRedcap} className="button" color="primary" renderAs="a">Download Redcap Schema</Button>
+          </div>
+          <div style={{padding: 10}}>
+            <Button className="button" renderAs="a" href="/">Back to Main Menu</Button>
+          </div>
+        </Container>
       </Section>
     )
   }

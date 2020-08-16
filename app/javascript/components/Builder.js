@@ -10,6 +10,7 @@ import { Tabs } from 'react-bulma-components';
 import { Hero } from 'react-bulma-components';
 import { Columns } from 'react-bulma-components';
 import { Image } from 'react-bulma-components';
+import { Loader } from 'react-bulma-components';
 import axios from 'axios';
 import Tab from './Tab.js'
 
@@ -17,6 +18,7 @@ class Builder extends React.Component {
   constructor(props) {
     super()
     this.state = {
+      loading: false,
       title: null,
       contact: {
         questions: [],
@@ -118,6 +120,7 @@ class Builder extends React.Component {
   }
 
   onSubmit = (e) => {
+    this.setState({loading: true})
     const selected = { questionnaire_questions: [
                         this.state.contact.selected,
                         this.state.introduction.selected,
@@ -189,9 +192,9 @@ class Builder extends React.Component {
                 </Message.Body>
               </Columns.Column>
               <Columns.Column align='right'>
-                <Button style={{margin: 15}} onClick={this.onSubmit} fullwidth={false} className="button is-dark" renderAs="a" href={`/questionnaire/${this.props.id}`}>
+                {this.state.loading ? <Loader style={{ width: 50, height: 50, margin: 30}}/> : <Button style={{margin: 15}} onClick={this.onSubmit} fullwidth={false} className="button is-dark" renderAs="a" href={`/questionnaire/${this.props.id}`}>
                   Finished? Export Questionnaire
-                </Button>
+                </Button>}
               </Columns.Column>
             </Columns>
           </Message>
