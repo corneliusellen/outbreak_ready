@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/questions',  to: 'questions#index'
   put '/questionnaire/:id', to: 'questionnaire#update'
   get '/questionnaire/:id', to: 'questionnaire#show'
+  get '/questionnaire/:id/redcap', to: 'questionnaire#redcap'
 
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'

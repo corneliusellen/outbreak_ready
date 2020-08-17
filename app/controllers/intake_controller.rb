@@ -16,6 +16,7 @@ class IntakeController < ApplicationController
   private
 
   def create_intakes(questionnaire)
+    questionnaire.intakes.destroy_all
     selected_tags.each do |selected_tag|
       tag = Tag.find_by_name(selected_tag)
       questionnaire.intakes.create!(tag: tag)

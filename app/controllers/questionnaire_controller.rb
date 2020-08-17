@@ -26,6 +26,15 @@ class QuestionnaireController < ApplicationController
     @sections = mapped_with_children.group_by{ |q| q[:section] }
   end
 
+  def redcap
+    questionnaire = Questionnaire.find(params['id'])
+    questions = questionnaire.questions
+
+    respond_to do |format|
+      format.csv { send_data questions.to_csv(questionnaire.title), filename: "redcap_data_dictionary_#{questionnaire.title}.csv"}
+    end
+  end
+
   private
 
   def required_params
