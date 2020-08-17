@@ -40,7 +40,7 @@ class Hello extends React.Component {
               <p>(4) Download your outbreak questionnaire</p>
             </Section>
             <Section>
-              <p>This tool was developed by the Colorado Integrated Food Safety Center of Excellence. For more information, visit <a href="www.cofoodsafety.org">COFoodSafety.org</a>.</p>
+              <p>This tool was developed by the Colorado Integrated Food Safety Center of Excellence. For more information, visit <a href="https://coloradosph.cuanschutz.edu/research-and-practice/centers-programs/foodsafety">COFoodSafety.org</a>.</p>
 
               <p>Do you have a suggestion for how to improve this tool, or outbreak questionnaires you would like to share? Email us.</p>
             </Section>
@@ -48,15 +48,14 @@ class Hello extends React.Component {
           <Container>
             <Section>
               <div style={{padding: 10}}>
-                <Button className="button" color="primary" renderAs="a" href="/admin/dashboard">
-                  Admin Dashboard
-                </Button>
-              </div>
-              <div style={{padding: 10}}>
                 <Button className="button" color="primary" renderAs="a" href="/intake">
                   Begin Building
                 </Button>
               </div>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
             </Section>
           </Container>
         </Hero.Body>
