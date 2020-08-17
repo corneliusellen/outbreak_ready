@@ -20,7 +20,6 @@ class ReviewQuestionnaire extends React.Component {
     }
 
     this.generateWord = this.generateWord.bind(this)
-    this.generateRedcap = this.generateRedcap.bind(this)
   }
 
   wordDocumentCreator(title) {
@@ -258,10 +257,6 @@ class ReviewQuestionnaire extends React.Component {
     });
   }
 
-  generateRedcap(e) {
-    return
-  }
-
   render() {
     return(
       <Section>
@@ -289,7 +284,7 @@ class ReviewQuestionnaire extends React.Component {
             <Button onClick={this.generateWord} className="button" color="primary" renderAs="a">Download Word Document</Button>
           </div>
           <div style={{padding: 10}}>
-            <Button onClick={this.generateRedcap} className="button" color="primary" renderAs="a">Download Redcap Schema</Button>
+            <Button  href={`/questionnaire/${this.props.id}/redcap?format=csv`} className="button" color="primary" renderAs="a">Download Redcap Data Dictionary</Button>
           </div>
           <div style={{padding: 10}}>
             <Button className="button" renderAs="a" href="/">Back to Main Menu</Button>
