@@ -15,6 +15,7 @@ class QuestionsController < ApplicationController
             .select('questions.id, questions.text, questions.answer_type, questions.answer_choices, questions.section, questions.mandatory, tags.name')
             .joins(:tags)
             .where(tags: { name: tags })
+            .where(parent_id: nil)
             .map{ |q| { id: q.id,
                         section: q.section,
                         text: q.text,
@@ -36,6 +37,7 @@ class QuestionsController < ApplicationController
     Question.select('questions.id, questions.text, questions.answer_type, questions.answer_choices, questions.section, questions.mandatory, tags.name')
             .joins(:tags)
             .where("tags.name = ?", 'universal')
+            .where(parent_id: nil)
             .map{|q| { id: q.id, section: q.section, text: q.text, answer_type: q.answer_type, answer_choices: q.answer_choices, mandatory: q.mandatory, tags: q.tags.map{ |tag| tag.name}, children: q.children.map{|child| { id: child.id, section: child.section, text: child.text, answer_type: child.answer_type, answer_choices: child.answer_choices, mandatory: q.mandatory, children: [] } } } }.uniq.each{ |question| questions << question }
 
     tagged_questions = questions.group_by{ |q| q[:section] }

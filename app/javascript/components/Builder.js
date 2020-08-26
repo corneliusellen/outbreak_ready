@@ -79,11 +79,11 @@ class Builder extends React.Component {
                         introduction: { questions: response.data.questions.introduction?.recommended || [], selected: response.data.questions.introduction?.mandatory || []  },
                         screening: { questions: response.data.questions.screening?.recommended || [], selected: response.data.questions.screening?.mandatory || [] },
                         other: { questions: response.data.questions.other?.recommended || [], selected: response.data.questions.other?.mandatory || [] },
-                        symptoms: { questions: response.data.questions.symptoms?.recommended || [], selected: response.data.questions.symptoms?.mandatory  },
-                        onset_duration: { questions: response.data.questions.onset_duration?.recommended || [], selected: response.data.questions.onset_duration?.mandatory || []},
-                        outcomes: { questions: response.data.questions.outcomes?.recommended || [], selected: response.data.questions.outcomes?.mandatory  || []},
-                        demographics: { questions: response.data.questions.demographics?.recommended || [] , selected: response.data.questions.demographics?.mandatory || []},
-                        exposure: { questions: response.data.questions.exposure?.recommended || [], selected: response.data.questions.exposure?.mandatory  || []}
+                        symptoms: { questions: response.data.questions.symptoms?.recommended || [], selected: response.data.questions.symptoms?.mandatory || [] },
+                        onset_duration: { questions: response.data.questions.onset_duration?.recommended || [], selected: response.data.questions.onset_duration?.mandatory || [] },
+                        outcomes: { questions: response.data.questions.outcomes?.recommended || [], selected: response.data.questions.outcomes?.mandatory  || [] },
+                        demographics: { questions: response.data.questions.demographics?.recommended || [] , selected: response.data.questions.demographics?.mandatory || [] },
+                        exposure: { questions: response.data.questions.exposure?.recommended || [], selected: response.data.questions.exposure?.mandatory  || [] }
                      })
       }
     );
