@@ -6,10 +6,10 @@ module Admin
 
     def upload
       result = Services::CsvImporter.new(csv_contents).import!
-      if result
+      if result == "success"
         flash[:notice] = "CSV import successful!"
       else
-        flash[:notice] = "CSV import failed."
+        flash[:notice] = "CSV import failed: #{result}"
       end
         redirect_to action: :index
     end

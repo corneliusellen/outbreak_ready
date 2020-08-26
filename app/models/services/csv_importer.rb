@@ -3,11 +3,11 @@ require 'csv'
 module Services
   class CsvImporter
     def initialize(file_contents)
-      @file_contents = file_contents
+      @file_contents = remove_non_ascii(file_contents)
     end
 
     def import!
-      CSV.parse(file_contents, headers: true, header_converters: :symbol).each do |row|
+      CSV.parse(file_contents, headers: true, header_converters: :symbol, encoding: 'utf-8').each do |row|
         id = row[:id]
         section = row[:section].gsub(/[0-9]/,'').downcase
         text = row[:question]
@@ -58,15 +58,28 @@ module Services
         end
       end
 
-      true
+      "success"
 
-    rescue StandardError
-      false
+    rescue StandardError => e
+      return "Please ensure all question IDs are unique." if e.message.include?("duplicate key value violates unique constraint") && e.message.include?("id")
+      return "Please ensure all Question Group IDs match an ID of an existing parent ID. This parent question row must precede the child question row in the current csv file OR the parent question has already been imported." if e.message.include?("Validation failed: Parent must exist")
+
+      e.message.to_s
     end
 
     private
 
     attr_reader :file_contents
 
+    def remove_non_ascii(file_contents)
+      encoding_options = {
+        :invalid           => :replace,  # Replace invalid byte sequences
+        :undef             => :replace,  # Replace anything not defined in ASCII
+        :replace           => '',        # Use a blank for those replacements
+        :universal_newline => true       # Always break lines with \n
+      }
+
+      file_contents.encode(Encoding.find('ASCII'), encoding_options)
+    end
   end
 end
