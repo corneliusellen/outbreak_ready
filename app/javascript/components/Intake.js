@@ -76,8 +76,7 @@ class Intake extends React.Component {
               Input your outbreak details into the following form. Your questionnaire will populate with instructions and questions based on the information you put into the form.
             </Heading>
             <p>
-              <em>If you don't see your specific category listed, please contact the Colorado
-               Integrated Food Safety Center of Excellence.</em>
+              <em>If you don't see a specific category, that means we don't have questions for it yet. Email us if there are questions you think we're missing. You can also download a basic questionnaire template here.</em>
             </p>
           </Container>
         </Section>
@@ -107,7 +106,7 @@ class Intake extends React.Component {
           <Section>
             <Container>
               <QuestionGroup text='2. Which of the following best describes the type of outbreak you are investigating?'
-                           options={ [["A localized outbreak associated with an event or single setting (e.g., potluck, wedding, petting zoo, camp, hospital)", 0, 3], ["A dispersed outbreak likely associated with a widely distributed food or product", 1, 4]] }
+                           options={ [["An outbreak detected by complaint, such as an outbreak associated with an event or single setting (e.g. restaurant, potluck, wedding, petting zoo, camp, hospital)", 0, 3], ["An outbreak detected by surveillance (i.e., likely associated with a widely distributed food or product)", 1, 4]] }
                            checkedTags={this.state.checkedTags}
                            handleCheckboxChange={this.onCheckboxChange}
                            type= 'RadioGroup'

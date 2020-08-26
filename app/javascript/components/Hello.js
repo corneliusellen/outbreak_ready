@@ -29,7 +29,7 @@ class Hello extends React.Component {
           </Container>
           <Container>
             <Section>
-              Welcome to the Questionnaire Builder Tool!
+              Welcome to the Outbreak Questionnaire Builder Tool!
             </Section>
             <Section>
               <p>Use this tool to build an outbreak questionnaire during an enteric disease outbreak investigation. In this tool, you will:</p>
@@ -42,7 +42,7 @@ class Hello extends React.Component {
             <Section>
               <p>This tool was developed by the Colorado Integrated Food Safety Center of Excellence. For more information, visit <a href="https://coloradosph.cuanschutz.edu/research-and-practice/centers-programs/foodsafety">COFoodSafety.org</a>.</p>
 
-              <p>Do you have a suggestion for how to improve this tool, or outbreak questionnaires you would like to share? Email us.</p>
+              <p>Do you have a suggestion for how to improve this tool, or outbreak questionnaires you would like to share? <a href="mailto: alice.white@cuanschutz.edu">Email us.</a></p>
             </Section>
           </Container>
           <Container>

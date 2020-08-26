@@ -184,10 +184,10 @@ class Builder extends React.Component {
                     Build your questionnaire by dragging and dropping the <em>Recommended Questions</em> into each section on the right. If a section is left blank it will not be included.
                   </li>
                   <li>
-                    Items highlighted in gray are standard and are already included on your questionnaire. It is advised that you do not remove them.
+                    Items highlighted in gray are standard questions and are already included on your questionnaire.
                   </li>
                   <li>
-                    Some questions have tags (highlighted in green) which indicate a question's relavance to a type of outbreak.
+                    Some questions have tags (highlighted in green) which indicate a question's relevance.
                   </li>
                 </Message.Body>
               </Columns.Column>
