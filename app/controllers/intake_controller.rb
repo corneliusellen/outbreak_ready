@@ -4,6 +4,7 @@ class IntakeController < ApplicationController
   def new
     questionnaire = Questionnaire.create!
     @id = questionnaire.id
+    @sections  = mapped_with_children(Question.all.standard).group_by{ |q| q[:section] }
   end
 
   def create
@@ -14,6 +15,18 @@ class IntakeController < ApplicationController
   end
 
   private
+
+  def mapped_with_children(questions)
+    questions.map{ |q| { section: q.section,
+                                                text: q.text,
+                                                answer_type: q.answer_type,
+                                                answer_choices: q.answer_choices,
+                                                children: q.children.map{ |child| { text: child.text,
+                                                                                    answer_type: child.answer_type,
+                                                                                    answer_choices: child.answer_choices,
+                                                                                    children: []
+                                                                                  }}}}
+  end
 
   def create_intakes(questionnaire)
     questionnaire.intakes.destroy_all

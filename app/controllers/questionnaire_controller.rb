@@ -14,16 +14,7 @@ class QuestionnaireController < ApplicationController
     questionnaire = Questionnaire.find(@id)
     @title = questionnaire.title
     questions = questionnaire.questions.includes(:children)
-    mapped_with_children = questions.map{ |q| { section: q.section,
-                                                text: q.text,
-                                                answer_type: q.answer_type,
-                                                answer_choices: q.answer_choices,
-                                                children: q.children.map{ |child| { text: child.text,
-                                                                                    answer_type: child.answer_type,
-                                                                                    answer_choices: child.answer_choices,
-                                                                                    children: []
-                                                                                  }}}}
-    @sections = mapped_with_children.group_by{ |q| q[:section] }
+    @sections = mapped_with_children(questions).group_by{ |q| q[:section] }
   end
 
   def redcap
@@ -35,7 +26,24 @@ class QuestionnaireController < ApplicationController
     end
   end
 
+  # def standard
+  #   questions = Question.standard
+  #   mapped_with_children(questions).group_by{ |q| q[:section] }
+  # end
+
   private
+
+  def mapped_with_children(questions)
+    questions.map{ |q| { section: q.section,
+                                                text: q.text,
+                                                answer_type: q.answer_type,
+                                                answer_choices: q.answer_choices,
+                                                children: q.children.map{ |child| { text: child.text,
+                                                                                    answer_type: child.answer_type,
+                                                                                    answer_choices: child.answer_choices,
+                                                                                    children: []
+                                                                                  }}}}
+  end
 
   def required_params
     params.permit!

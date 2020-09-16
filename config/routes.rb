@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   post '/intake', to: 'intake#create'
   get '/builder', to: 'builder#index'
   get '/questions',  to: 'questions#index'
-  get '/questions/download_csv', to: 'questions#download_csv' 
+  get '/questions/download_csv', to: 'questions#download_csv'
   put '/questionnaire/:id', to: 'questionnaire#update'
   get '/questionnaire/:id', to: 'questionnaire#show'
   get '/questionnaire/:id/redcap', to: 'questionnaire#redcap'
+  # get '/questionnaire/standard', to: 'questionnaire#standard'
 
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'

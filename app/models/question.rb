@@ -16,6 +16,8 @@ class Question < ApplicationRecord
   belongs_to :parent, class_name: 'Question', optional: true
   has_many :children, class_name: 'Question', foreign_key: 'parent_id', dependent: :destroy
 
+  scope :standard, -> { joins(:tags).where("tags.name = ?", "universal") }
+
   HEADERS = [
               'Variable / Field Name',
               'Form Name',
