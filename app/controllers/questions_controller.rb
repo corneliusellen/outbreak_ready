@@ -1,10 +1,24 @@
+require 'csv'
+
 class QuestionsController < ApplicationController
   def index
     questionnaire = Questionnaire.find(id)
     render json: format_data(questionnaire)
   end
 
+  def download_csv
+    @questions = Question.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @questions.all_to_csv, filename: "outbreak-questionnaire-export-#{today_date}.csv"}
+    end
+  end
+
   private
+
+  def today_date
+    DateTime.now.strftime("%m-%d-%Y")
+  end
 
   def format_data(questionnaire)
     title = questionnaire.title

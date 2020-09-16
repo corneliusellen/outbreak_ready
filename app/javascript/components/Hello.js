@@ -52,6 +52,11 @@ class Hello extends React.Component {
                   Begin Building
                 </Button>
               </div>
+              <div style={{padding: 10}}>
+                <Button className="button" color="primary" renderAs="a" href="/questions/download_csv?format=csv">
+                  Export All Questions
+                </Button>
+              </div>
               <br/>
               <br/>
               <br/>

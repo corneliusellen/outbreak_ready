@@ -16,33 +16,42 @@ class Question < ApplicationRecord
   belongs_to :parent, class_name: 'Question', optional: true
   has_many :children, class_name: 'Question', foreign_key: 'parent_id', dependent: :destroy
 
-  def self.to_csv(questionnaire_title)
-    headers = [
-                'Variable / Field Name',
-                'Form Name',
-                'Field Type',
-                'SectionHeader',
-                'Field Label',
-                'Choices, Calculations, OR Slider Labels',
-                'Field Note',
-                'Text Validation Type OR Show Slider Number',
-                'Text Validation Min',
-                'Text Validation Max',
-                'Identifier?',
-                'Branching Logic (Show field only if...)',
-                'Required Field?',
-                'Custom Alignment',
-                'Question Number (surveys only)',
-                'Matrix Group Name',
-                'Matrix Ranking?',
-                'Field Annotation'
-              ]
+  HEADERS = [
+              'Variable / Field Name',
+              'Form Name',
+              'Field Type',
+              'SectionHeader',
+              'Field Label',
+              'Choices, Calculations, OR Slider Labels',
+              'Field Note',
+              'Text Validation Type OR Show Slider Number',
+              'Text Validation Min',
+              'Text Validation Max',
+              'Identifier?',
+              'Branching Logic (Show field only if...)',
+              'Required Field?',
+              'Custom Alignment',
+              'Question Number (surveys only)',
+              'Matrix Group Name',
+              'Matrix Ranking?',
+              'Field Annotation'
+            ]
 
+  def self.to_csv(questionnaire_title)
     CSV.generate(headers: true) do |csv|
-      csv << headers
+      csv << HEADERS
       csv << ['contact_id',"#{questionnaire_title}",'text','','Contact ID']
       all.each do |q|
         csv << self.map_redcap_attributes(q, questionnaire_title)
+      end
+    end
+  end
+
+  def self.all_to_csv
+    CSV.generate(headers: true) do |csv|
+      csv << HEADERS
+      all.each do |q|
+        csv << self.map_redcap_attributes(q, nil)
       end
     end
   end
@@ -55,7 +64,7 @@ class Question < ApplicationRecord
       questionnaire_title,
       self.field_type(q),
       q.redcap_metadata["sectionheader"],
-      q.redcap_metadata["field_label"],
+      q.text,
       self.answer_choices(q),
       q.redcap_metadata["field_note"],
       q.redcap_metadata["text_validation_type_or_show_slider_number"],
