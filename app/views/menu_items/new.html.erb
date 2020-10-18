@@ -1,0 +1,20 @@
+<div>
+  <div class="section">
+    <%= react_component('shared/LogoHeader', { img_src: image_url('coe_logo.png') }) %>
+    <div class="container" style="margin-top: 20px;">
+      <h1 class="title">Menu Upload</h1>
+      <%= form_tag({action: :create}, multipart: true, method:'post') do %>
+        <div class="field">
+          <div>
+            <%= label_tag('input_file', 'Take a photo of a menu and upload it to your questionnaire.', class: 'label') %>
+            <p>Image must be .jpg or .png format.</p>
+            <%= file_field_tag 'file', required: true %>
+          </div>
+        </div>
+        <div class="control">
+          <%= submit_tag('Submit', class: 'button is-primary') %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -9,13 +9,11 @@ module Services
       :universal_newline => true       # Always break lines with \n
     }
 
-    # string = RTesseract.new('./app/assets/images/test.png').to_s
-
     def initialize(string)
       @ingredients = string
     end
 
-    def clean!
+    def find_ingredients!
       @ingredients = @ingredients.split(" ").map{ |word| word.downcase }
       remove_non_ascii_chars
       remove_non_alpha_words
@@ -37,7 +35,7 @@ module Services
 
     def remove_non_alpha_words
       @ingredients = @ingredients.map do |word|
-        word.split('').reject{|letter| ['|','$','.',':',',','/','(',')',';','!','#','=',''].include?(letter)}.join
+        word.split('').reject{|letter| ['|','$','.',':',',','/','(',')',';','!','?','&','#','=','*','@','~',''].include?(letter)}.join
       end
       @ingredients = @ingredients.reject{|word| word.to_i != 0 }
     end
