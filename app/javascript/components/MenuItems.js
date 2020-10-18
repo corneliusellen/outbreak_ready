@@ -84,12 +84,8 @@ class MenuItems extends React.Component {
     })
   }
 
-  handleFoodInput = () => {
-
-  }
-
-  handleFoodSubmit = () => {
-
+  onSubmit = () => {
+    
   }
 
   render() {
@@ -102,24 +98,8 @@ class MenuItems extends React.Component {
               Menu Items
             </Heading>
             <Heading subtitle>
-              Select foods to include in your questionnaire as potential exposures.
+              Select foods to include in your questionnaire as exposures.
             </Heading>
-            <p>
-              If some items don't appear correctly, the image quality might be too low. You can enter additional foods below:
-            </p>
-            <Container>
-            <Columns className="is-vcentered">
-              <Columns.Column>
-                <Form.Input onChange={this.handleFoodInput} name="addItem" type="text" placeholder="Enter food" value={this.state.foodInput}>
-                </Form.Input>
-              </Columns.Column>
-              <Columns.Column>
-                <Button onClick={this.handleFoodSubmit} className="button">
-                  Add
-                </Button>
-              </Columns.Column>
-            </Columns>
-            </Container>
           </Container>
           <Container style={{marginTop: 20}}>
               <Button onClick={this.handleSelectAll.bind(this)} className="button">
@@ -130,6 +110,9 @@ class MenuItems extends React.Component {
                 {this.renderMenuItems()}
               </Columns>
             </Container>
+            <Form.Control>
+              <Button onClick={this.onSubmit} className="button" color="primary" renderAs="a" href={`/builder?id=${this.props.id}`}>Submit</Button>
+            </Form.Control>
           </Container>
         </Section>
       </div>

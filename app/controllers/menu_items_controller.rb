@@ -1,8 +1,16 @@
 class MenuItemsController < ApplicationController
-  def new; end
+
+  def show_new
+    @id = params[:id]
+  end
+
+  def new
+    @id = params[:id]
+  end
 
   def index
     @ingredients = params[:ingredients]
+    @id = params[:id]
   end
 
   def create
@@ -10,7 +18,7 @@ class MenuItemsController < ApplicationController
     string = RTesseract.new("./public/uploads/#{params[:file].original_filename}").to_s
     ingredients = Services::MenuDataCleaner.new(string).find_ingredients!
 
-    redirect_to menu_items_path(ingredients: ingredients)
+    redirect_to menu_items_path(ingredients: ingredients, id: params[:id])
   end
 
   private
