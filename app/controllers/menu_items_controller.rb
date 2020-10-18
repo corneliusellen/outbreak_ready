@@ -1,4 +1,5 @@
 class MenuItemsController < ApplicationController
+
   def show_new
     @id = params[:id]
   end
