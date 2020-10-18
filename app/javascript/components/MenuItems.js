@@ -8,6 +8,7 @@ import { Columns } from 'react-bulma-components';
 import { Button } from 'react-bulma-components';
 import { Image } from 'react-bulma-components';
 import { Form } from 'react-bulma-components';
+import axios from 'axios';
 import LogoHeader from './shared/LogoHeader'
 
 class MenuItems extends React.Component {
@@ -85,7 +86,10 @@ class MenuItems extends React.Component {
   }
 
   onSubmit = () => {
-    
+    axios.post(`/questions?id=${this.props.id}`, { menu_items: this.state.selectedIngredients })
+    .then((result => {
+      return;
+    }))
   }
 
   render() {
