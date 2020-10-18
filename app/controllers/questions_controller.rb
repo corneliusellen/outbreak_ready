@@ -1,6 +1,8 @@
 require 'csv'
 
 class QuestionsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     questionnaire = Questionnaire.find(id)
     render json: format_data(questionnaire)
@@ -11,6 +13,19 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @questions.all_to_csv, filename: "outbreak-questionnaire-export-#{today_date}.csv"}
+    end
+  end
+
+  def create
+    questionnaire = Questionnaire.find(id)
+    menu_items = params[:menu_items]
+    menu_items.each do |menu_item|
+      questionnaire.questions.create!(section: :exposure,
+                                      text: "#{menu_item.capitalize}?",
+                                      mandatory: 'mandatory',
+                                      answer_type: :radio,
+                                      answer_choices: ['Y, Yes','N, No', 'U, Unknown'],
+                                      redcap_metadata: {} )
     end
   end
 
@@ -53,6 +68,8 @@ class QuestionsController < ApplicationController
             .where("tags.name = ?", 'universal')
             .where(parent_id: nil)
             .map{|q| { id: q.id, section: q.section, text: q.text, answer_type: q.answer_type, answer_choices: q.answer_choices, mandatory: q.mandatory, tags: q.tags.map{ |tag| tag.name}, children: q.children.map{|child| { id: child.id, section: child.section, text: child.text, answer_type: child.answer_type, answer_choices: child.answer_choices, mandatory: q.mandatory, children: [] } } } }.uniq.each{ |question| questions << question }
+
+    questionnaire.questions.map{|q| { id: q.id, section: q.section, text: q.text, answer_type: q.answer_type, answer_choices: q.answer_choices, mandatory: q.mandatory, tags: q.tags.map{ |tag| tag.name}, children: [] } }.uniq.each{ |question| questions << question }
 
     tagged_questions = questions.group_by{ |q| q[:section] }
                                 .map{|section,qs| [section, qs.group_by{|q| q[:mandatory]}]}

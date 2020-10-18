@@ -5,7 +5,6 @@ import { Container } from 'react-bulma-components';
 import { Heading } from 'react-bulma-components';
 import { Box } from 'react-bulma-components';
 import { Section } from 'react-bulma-components';
-import { Button } from 'react-bulma-components';
 import { Columns } from 'react-bulma-components';
 
 class Question extends React.Component {

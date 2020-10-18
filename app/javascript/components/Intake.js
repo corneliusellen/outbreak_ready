@@ -42,7 +42,9 @@ class Intake extends React.Component {
   onSubmit = (e) => {
     const { title, checkedTags } = this.state;
     const tags = []
-    const filterCheckedTags = function(value,key,map){if (value == true) { tags.push(key) }}
+    const filterCheckedTags = function(value,key,map){
+      if (value == true) { tags.push(key) }
+    }
 
     checkedTags.forEach(filterCheckedTags)
 
@@ -403,7 +405,7 @@ class Intake extends React.Component {
                   <Button>Cancel</Button>
                 </Form.Control>
                 <Form.Control>
-                  <Button onClick={this.onSubmit} className="button" color="primary" renderAs="a" href={`/builder?id=${this.props.id}`}>Submit</Button>
+                  <Button onClick={this.onSubmit} className="button" color="primary" renderAs="a" href={`/menu_items/show_new?id=${this.props.id}`}>Submit</Button>
                 </Form.Control>
               </Form.Field>
             </Container>
