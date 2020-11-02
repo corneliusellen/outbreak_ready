@@ -2963,7 +2963,9 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       return questions.map(function (q) {
-        if (q.answer_type == "radio" || q.answer_type == "checkbox") {
+        if (q.answer_type == "radio" || q.answer_type == "checkbox" || q.children.some(function (c) {
+          return c.answer_type == "radio" || c.answer_type == "checkbox";
+        })) {
           return [_this3.question(q)].concat(_toConsumableArray(_this3.sortQuestionsWithChildren(q))).reduce(function (prev, curr) {
             return prev.concat(curr);
           }, []);
@@ -3016,21 +3018,30 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
     key: "answer",
     value: function answer(q) {
       if (q.answer_type == "radio" || q.answer_type == "checkbox") {
-        return q.answer_choices.map(function (choice) {
-          return [new docx.TextRun({
-            text: "      ",
-            underline: {}
-          }), new docx.TextRun({
-            text: "".concat(choice, "      ")
-          })];
+        return q.answer_choices.map(function (choice, i) {
+          if (i == 0) {
+            return [new docx.TextRun({
+              text: "      ",
+              underline: {}
+            })["break"](), new docx.TextRun({
+              text: "".concat(choice, "      ")
+            })];
+          } else {
+            return [new docx.TextRun({
+              text: "      ",
+              underline: {}
+            }), new docx.TextRun({
+              text: "".concat(choice, "      ")
+            })];
+          }
         }).reduce(function (prev, curr) {
           return prev.concat(curr);
         }, []);
       } else if (q.answer_type == "text" || q.answer_type == "number") {
         return new docx.TextRun({
-          text: '                                                ',
+          text: '                                                                                                ',
           underline: {}
-        });
+        })["break"]();
       } else {
         return new docx.TextRun({
           text: ''
@@ -3053,7 +3064,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 262,
+          lineNumber: 276,
           columnNumber: 7
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Hero"], {
@@ -3062,7 +3073,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 263,
+          lineNumber: 277,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Hero"].Body, {
@@ -3072,7 +3083,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 264,
+          lineNumber: 278,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"], {
@@ -3080,21 +3091,21 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 265,
+          lineNumber: 279,
           columnNumber: 13
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"].Column, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 266,
+          lineNumber: 280,
           columnNumber: 15
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Heading"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 267,
+          lineNumber: 281,
           columnNumber: 17
         }
       }, "Outbreak Questionnaire Builder")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"].Column, {
@@ -3102,7 +3113,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 271,
+          lineNumber: 285,
           columnNumber: 15
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -3112,7 +3123,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 272,
+          lineNumber: 286,
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Image"], {
@@ -3120,14 +3131,14 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 273,
+          lineNumber: 287,
           columnNumber: 19
         }
       })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Container"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 279,
+          lineNumber: 293,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -3137,14 +3148,14 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 280,
+          lineNumber: 294,
           columnNumber: 11
         }
       }, "Your ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 281,
+          lineNumber: 295,
           columnNumber: 18
         }
       }, "".concat(this.props.title)), " questionnaire was created successfully!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3154,7 +3165,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 283,
+          lineNumber: 297,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -3165,7 +3176,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284,
+          lineNumber: 298,
           columnNumber: 13
         }
       }, "Download Word Document")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3175,7 +3186,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 286,
+          lineNumber: 300,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -3186,7 +3197,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 287,
+          lineNumber: 301,
           columnNumber: 13
         }
       }, "Download Redcap Data Dictionary")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3196,7 +3207,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 289,
+          lineNumber: 303,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -3206,7 +3217,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 290,
+          lineNumber: 304,
           columnNumber: 13
         }
       }, "Back to Main Menu"))));
@@ -99241,4 +99252,4 @@ module.exports = function (module) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=application-51bcc3402dcc7dc1bad9.js.map
+//# sourceMappingURL=application-9b39800ee74d02199fc6.js.map

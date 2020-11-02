@@ -151,7 +151,7 @@ class ReviewQuestionnaire extends React.Component {
 
   questionList(questions) {
     return (questions.map((q) => {
-      if (q.answer_type == "radio" || q.answer_type == "checkbox") {
+      if (q.answer_type == "radio" || q.answer_type == "checkbox" || q.children.some((c) => c.answer_type == "radio" || c.answer_type == "checkbox")) {
         return(
             [
               this.question(q),
@@ -218,7 +218,20 @@ class ReviewQuestionnaire extends React.Component {
 
   answer(q) {
     if (q.answer_type == "radio" || q.answer_type == "checkbox") {
-      return (q.answer_choices.map((choice) => {
+      return (q.answer_choices.map((choice, i) => {
+        if (i == 0) {
+          return(
+            [
+              new docx.TextRun({
+                text: `      `,
+                underline: {},
+              }).break(),
+              new docx.TextRun({
+                text: `${choice}      `,
+              })
+            ]
+          )
+        } else {
           return(
             [
               new docx.TextRun({
@@ -230,19 +243,20 @@ class ReviewQuestionnaire extends React.Component {
               })
             ]
           )
+        }
         })
       ).reduce((prev, curr) => prev.concat(curr), [])
     } else if(q.answer_type == "text" || q.answer_type == "number") {
       return(
-          new docx.TextRun({
-          text: '                                                ',
+        new docx.TextRun({
+          text: '                                                                                                ',
           underline: {}
-        })
+        }).break()
       )
     }
     else {
       return(
-          new docx.TextRun({
+        new docx.TextRun({
           text: ''
         }).break()
       )

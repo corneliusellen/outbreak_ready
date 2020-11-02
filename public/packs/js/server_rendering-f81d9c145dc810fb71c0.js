@@ -104,6 +104,8 @@ var map = {
 	"./Hello.js": "./app/javascript/components/Hello.js",
 	"./Intake": "./app/javascript/components/Intake.js",
 	"./Intake.js": "./app/javascript/components/Intake.js",
+	"./MenuItems": "./app/javascript/components/MenuItems.js",
+	"./MenuItems.js": "./app/javascript/components/MenuItems.js",
 	"./Question": "./app/javascript/components/Question.js",
 	"./Question.js": "./app/javascript/components/Question.js",
 	"./QuestionBank": "./app/javascript/components/QuestionBank.js",
@@ -125,7 +127,9 @@ var map = {
 	"./form_elements/RadioGroup": "./app/javascript/components/form_elements/RadioGroup.js",
 	"./form_elements/RadioGroup.js": "./app/javascript/components/form_elements/RadioGroup.js",
 	"./form_elements/SubCheckbox": "./app/javascript/components/form_elements/SubCheckbox.js",
-	"./form_elements/SubCheckbox.js": "./app/javascript/components/form_elements/SubCheckbox.js"
+	"./form_elements/SubCheckbox.js": "./app/javascript/components/form_elements/SubCheckbox.js",
+	"./shared/LogoHeader": "./app/javascript/components/shared/LogoHeader.js",
+	"./shared/LogoHeader.js": "./app/javascript/components/shared/LogoHeader.js"
 };
 
 
@@ -1536,14 +1540,14 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 300,
+          lineNumber: 302,
           columnNumber: 7
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Section"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 301,
+          lineNumber: 303,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Hero"], {
@@ -1552,7 +1556,7 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 302,
+          lineNumber: 304,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Hero"].Body, {
@@ -1562,7 +1566,7 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 303,
+          lineNumber: 305,
           columnNumber: 13
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Columns"], {
@@ -1570,21 +1574,21 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 304,
+          lineNumber: 306,
           columnNumber: 15
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Columns"].Column, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 305,
+          lineNumber: 307,
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Heading"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 306,
+          lineNumber: 308,
           columnNumber: 19
         }
       }, "Outbreak Questionnaire Builder")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Columns"].Column, {
@@ -1592,7 +1596,7 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 310,
+          lineNumber: 312,
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
@@ -1602,7 +1606,7 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 311,
+          lineNumber: 313,
           columnNumber: 19
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Image"], {
@@ -1610,14 +1614,14 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 312,
+          lineNumber: 314,
           columnNumber: 21
         }
       })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 318,
+          lineNumber: 320,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Heading"], {
@@ -1627,7 +1631,7 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 319,
+          lineNumber: 321,
           columnNumber: 13
         }
       }, "Intake Form"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Heading"], {
@@ -1635,21 +1639,21 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 322,
+          lineNumber: 324,
           columnNumber: 13
         }
       }, "Input your outbreak details into the following form. Your questionnaire will populate with instructions and questions based on the information you put into the form."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 325,
+          lineNumber: 327,
           columnNumber: 13
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 326,
+          lineNumber: 328,
           columnNumber: 15
         }
       }, "If you don't see a specific category, that means we don't have questions for it yet. Email us if there are questions you think we're missing. You can also download a basic questionnaire template ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1658,21 +1662,21 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 326,
+          lineNumber: 328,
           columnNumber: 214
         }
       }, "here."))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Section"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 330,
+          lineNumber: 332,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 331,
+          lineNumber: 333,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QuestionGroup_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1695,21 +1699,21 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 332,
+          lineNumber: 334,
           columnNumber: 13
         }
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Section"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 353,
+          lineNumber: 355,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 354,
+          lineNumber: 356,
           columnNumber: 13
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QuestionGroup_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1732,21 +1736,21 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 355,
+          lineNumber: 357,
           columnNumber: 15
         }
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Section"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 376,
+          lineNumber: 378,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 377,
+          lineNumber: 379,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SubQuestion_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1762,42 +1766,42 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 378,
+          lineNumber: 380,
           columnNumber: 13
         }
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Section"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 387,
+          lineNumber: 389,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 388,
+          lineNumber: 390,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Form"].Field, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 389,
+          lineNumber: 391,
           columnNumber: 13
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 390,
+          lineNumber: 392,
           columnNumber: 15
         }
       }, "4. Enter a name for your outbreak questionnaire:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 393,
+          lineNumber: 395,
           columnNumber: 15
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Form"].Input, {
@@ -1809,21 +1813,21 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 394,
+          lineNumber: 396,
           columnNumber: 17
         }
       }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Section"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 399,
+          lineNumber: 401,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 400,
+          lineNumber: 402,
           columnNumber: 13
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Form"].Field, {
@@ -1831,28 +1835,28 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 401,
+          lineNumber: 403,
           columnNumber: 15
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 402,
+          lineNumber: 404,
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Button"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 403,
+          lineNumber: 405,
           columnNumber: 19
         }
       }, "Cancel")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 405,
+          lineNumber: 407,
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -1860,11 +1864,11 @@ var Intake = /*#__PURE__*/function (_React$Component) {
         className: "button",
         color: "primary",
         renderAs: "a",
-        href: "/builder?id=".concat(this.props.id),
+        href: "/menu_items/show_new?id=".concat(this.props.id),
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 406,
+          lineNumber: 408,
           columnNumber: 19
         }
       }, "Submit"))))));
@@ -1875,6 +1879,300 @@ var Intake = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Intake);
+
+/***/ }),
+
+/***/ "./app/javascript/components/MenuItems.js":
+/*!************************************************!*\
+  !*** ./app/javascript/components/MenuItems.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bulma_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bulma-components */ "./node_modules/react-bulma-components/dist/index.js");
+/* harmony import */ var react_bulma_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _shared_LogoHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./shared/LogoHeader */ "./app/javascript/components/shared/LogoHeader.js");
+var _jsxFileName = "/Users/ellencornelius/outbreak/outbreak_ready/app/javascript/components/MenuItems.js";
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var MenuItems = /*#__PURE__*/function (_React$Component) {
+  _inherits(MenuItems, _React$Component);
+
+  var _super = _createSuper(MenuItems);
+
+  function MenuItems() {
+    var _this;
+
+    _classCallCheck(this, MenuItems);
+
+    _this = _super.call(this);
+
+    _this.ingredientItems = function () {
+      return _this.props.ingredients.map(function (ingredient) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+          onClick: _this.handleSelect.bind(_assertThisInitialized(_this)),
+          className: "button",
+          color: _this.isSelected(ingredient),
+          style: {
+            width: '100%',
+            margin: 2
+          },
+          __self: _assertThisInitialized(_this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 11
+          }
+        }, ingredient);
+      });
+    };
+
+    _this.isSelected = function (ingredient) {
+      if (_this.state.selectedIngredients.length == 0) {
+        return "";
+      } else if (_this.state.selectedIngredients.includes(ingredient)) {
+        return "primary";
+      } else {
+        return "";
+      }
+    };
+
+    _this.renderMenuItems = function () {
+      var items = _this.ingredientItems();
+
+      var itemsPerColumn = Math.ceil(items.length / 7);
+      var columns = items.reduce(function (total, item, index) {
+        if (index % itemsPerColumn === 0) total.push([]);
+        total[Math.floor(index / itemsPerColumn)].push(item);
+        return total;
+      }, []);
+      return columns.map(function (item) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Columns"].Column, {
+          __self: _assertThisInitialized(_this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58,
+            columnNumber: 11
+          }
+        }, item);
+      });
+    };
+
+    _this.handleSelect = function (event) {
+      var item = event.target.textContent;
+
+      _this.setState(function (state) {
+        var newSelectedIngredients = state.selectedIngredients.includes(item) ? state.selectedIngredients.filter(function (i) {
+          return i !== item;
+        }) // remove item
+        : [].concat(_toConsumableArray(state.selectedIngredients), [item]); // add item
+
+        return {
+          selectedIngredients: newSelectedIngredients
+        };
+      });
+    };
+
+    _this.handleSelectAll = function () {
+      _this.setState(function (state) {
+        if (_this.state.selectedIngredients.length == 0) {
+          return {
+            selectedIngredients: _this.props.ingredients,
+            allSelected: 'Unselect All'
+          };
+        } else {
+          return {
+            selectedIngredients: [],
+            allSelected: 'Select All'
+          };
+        }
+      });
+    };
+
+    _this.onSubmit = function () {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/questions?id=".concat(_this.props.id), {
+        menu_items: _this.state.selectedIngredients
+      }).then(function (result) {
+        return;
+      });
+    };
+
+    _this.state = {
+      foodInput: undefined,
+      selectedIngredients: [],
+      allSelected: 'Select All'
+    };
+    return _this;
+  }
+
+  _createClass(MenuItems, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Section"], {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shared_LogoHeader__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        img_src: this.props.img_src,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99,
+          columnNumber: 11
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Heading"], {
+        style: {
+          marginTop: 20
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101,
+          columnNumber: 13
+        }
+      }, "Menu Items"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Heading"], {
+        subtitle: true,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104,
+          columnNumber: 13
+        }
+      }, "Select foods to include in your questionnaire as exposures.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+        style: {
+          marginTop: 20
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+        onClick: this.handleSelectAll.bind(this),
+        className: "button",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109,
+          columnNumber: 15
+        }
+      }, this.state.allSelected), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+        style: {
+          marginTop: 15
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 112,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Columns"], {
+        style: {
+          margin: 0
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113,
+          columnNumber: 15
+        }
+      }, this.renderMenuItems())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 117,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+        onClick: this.onSubmit,
+        className: "button",
+        color: "primary",
+        renderAs: "a",
+        href: "/builder?id=".concat(this.props.id),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118,
+          columnNumber: 15
+        }
+      }, "Submit")))));
+    }
+  }]);
+
+  return MenuItems;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (MenuItems);
 
 /***/ }),
 
@@ -1925,7 +2223,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Question = /*#__PURE__*/function (_React$Component) {
   _inherits(Question, _React$Component);
 
@@ -1948,7 +2245,7 @@ var Question = /*#__PURE__*/function (_React$Component) {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 18,
+              lineNumber: 17,
               columnNumber: 17
             }
           });
@@ -1957,7 +2254,7 @@ var Question = /*#__PURE__*/function (_React$Component) {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 21,
+              lineNumber: 20,
               columnNumber: 11
             }
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Box"], {
@@ -1967,14 +2264,14 @@ var Question = /*#__PURE__*/function (_React$Component) {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 22,
+              lineNumber: 21,
               columnNumber: 13
             }
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             __self: this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 23,
+              lineNumber: 22,
               columnNumber: 15
             }
           }, tag)));
@@ -1986,7 +2283,7 @@ var Question = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33,
+          lineNumber: 32,
           columnNumber: 7
         }
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1996,7 +2293,7 @@ var Question = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38,
+          lineNumber: 37,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Box"], {
@@ -2004,21 +2301,21 @@ var Question = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39,
+          lineNumber: 38,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40,
+          lineNumber: 39,
           columnNumber: 13
         }
       }, this.props.question.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43,
+          lineNumber: 42,
           columnNumber: 13
         }
       }, tags))));
@@ -2082,7 +2379,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var QuestionBank = /*#__PURE__*/function (_React$Component) {
   _inherits(QuestionBank, _React$Component);
 
@@ -2118,7 +2414,7 @@ var QuestionBank = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29,
+          lineNumber: 28,
           columnNumber: 7
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Heading"], {
@@ -2126,7 +2422,7 @@ var QuestionBank = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30,
+          lineNumber: 29,
           columnNumber: 9
         }
       }, "Recommended Questions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBar_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2135,7 +2431,7 @@ var QuestionBank = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33,
+          lineNumber: 32,
           columnNumber: 9
         }
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__["Droppable"], {
@@ -2143,7 +2439,7 @@ var QuestionBank = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37,
+          lineNumber: 36,
           columnNumber: 9
         }
       }, function (provided) {
@@ -2155,7 +2451,7 @@ var QuestionBank = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39,
+            lineNumber: 38,
             columnNumber: 13
           }
         });
@@ -2367,7 +2663,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var QuestionList = /*#__PURE__*/function (_React$Component) {
   _inherits(QuestionList, _React$Component);
 
@@ -2398,7 +2693,7 @@ var QuestionList = /*#__PURE__*/function (_React$Component) {
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 24,
+            lineNumber: 23,
             columnNumber: 7
           }
         }, function (provided) {
@@ -2410,7 +2705,7 @@ var QuestionList = /*#__PURE__*/function (_React$Component) {
             __self: _this,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 30,
+              lineNumber: 29,
               columnNumber: 11
             }
           });
@@ -2421,7 +2716,7 @@ var QuestionList = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36,
+          lineNumber: 35,
           columnNumber: 7
         }
       }), questionBlocks, provided.placeholder);
@@ -2634,7 +2929,9 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       return questions.map(function (q) {
-        if (q.answer_type == "radio" || q.answer_type == "checkbox") {
+        if (q.answer_type == "radio" || q.answer_type == "checkbox" || q.children.some(function (c) {
+          return c.answer_type == "radio" || c.answer_type == "checkbox";
+        })) {
           return [_this3.question(q)].concat(_toConsumableArray(_this3.sortQuestionsWithChildren(q))).reduce(function (prev, curr) {
             return prev.concat(curr);
           }, []);
@@ -2687,21 +2984,30 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
     key: "answer",
     value: function answer(q) {
       if (q.answer_type == "radio" || q.answer_type == "checkbox") {
-        return q.answer_choices.map(function (choice) {
-          return [new docx.TextRun({
-            text: "      ",
-            underline: {}
-          }), new docx.TextRun({
-            text: "".concat(choice, "      ")
-          })];
+        return q.answer_choices.map(function (choice, i) {
+          if (i == 0) {
+            return [new docx.TextRun({
+              text: "      ",
+              underline: {}
+            })["break"](), new docx.TextRun({
+              text: "".concat(choice, "      ")
+            })];
+          } else {
+            return [new docx.TextRun({
+              text: "      ",
+              underline: {}
+            }), new docx.TextRun({
+              text: "".concat(choice, "      ")
+            })];
+          }
         }).reduce(function (prev, curr) {
           return prev.concat(curr);
         }, []);
       } else if (q.answer_type == "text" || q.answer_type == "number") {
         return new docx.TextRun({
-          text: '                                                ',
+          text: '                                                                                                ',
           underline: {}
-        });
+        })["break"]();
       } else {
         return new docx.TextRun({
           text: ''
@@ -2724,7 +3030,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 262,
+          lineNumber: 276,
           columnNumber: 7
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Hero"], {
@@ -2733,7 +3039,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 263,
+          lineNumber: 277,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Hero"].Body, {
@@ -2743,7 +3049,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 264,
+          lineNumber: 278,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"], {
@@ -2751,21 +3057,21 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 265,
+          lineNumber: 279,
           columnNumber: 13
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"].Column, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 266,
+          lineNumber: 280,
           columnNumber: 15
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Heading"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 267,
+          lineNumber: 281,
           columnNumber: 17
         }
       }, "Outbreak Questionnaire Builder")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"].Column, {
@@ -2773,7 +3079,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 271,
+          lineNumber: 285,
           columnNumber: 15
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -2783,7 +3089,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 272,
+          lineNumber: 286,
           columnNumber: 17
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Image"], {
@@ -2791,14 +3097,14 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 273,
+          lineNumber: 287,
           columnNumber: 19
         }
       })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Container"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 279,
+          lineNumber: 293,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -2808,14 +3114,14 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 280,
+          lineNumber: 294,
           columnNumber: 11
         }
       }, "Your ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 281,
+          lineNumber: 295,
           columnNumber: 18
         }
       }, "".concat(this.props.title)), " questionnaire was created successfully!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2825,7 +3131,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 283,
+          lineNumber: 297,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -2836,7 +3142,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284,
+          lineNumber: 298,
           columnNumber: 13
         }
       }, "Download Word Document")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2846,7 +3152,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 286,
+          lineNumber: 300,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -2857,7 +3163,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 287,
+          lineNumber: 301,
           columnNumber: 13
         }
       }, "Download Redcap Data Dictionary")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2867,7 +3173,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 289,
+          lineNumber: 303,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -2877,7 +3183,7 @@ var ReviewQuestionnaire = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 290,
+          lineNumber: 304,
           columnNumber: 13
         }
       }, "Back to Main Menu"))));
@@ -2935,7 +3241,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var SearchBar = /*#__PURE__*/function (_React$Component) {
   _inherits(SearchBar, _React$Component);
 
@@ -2964,7 +3269,7 @@ var SearchBar = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21,
+          lineNumber: 20,
           columnNumber: 7
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Form"].Input, {
@@ -2976,7 +3281,7 @@ var SearchBar = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22,
+          lineNumber: 21,
           columnNumber: 9
         }
       }));
@@ -3231,7 +3536,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var reorder = function reorder(list, startIndex, endIndex) {
   var result = Array.from(list);
 
@@ -3330,14 +3634,14 @@ var Tab = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98,
+          lineNumber: 97,
           columnNumber: 7
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99,
+          lineNumber: 98,
           columnNumber: 9
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"].Column, {
@@ -3348,7 +3652,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100,
+          lineNumber: 99,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QuestionBank_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -3356,7 +3660,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103,
+          lineNumber: 102,
           columnNumber: 13
         }
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Columns"].Column, {
@@ -3364,7 +3668,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105,
+          lineNumber: 104,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Heading"], {
@@ -3372,7 +3676,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108,
+          lineNumber: 107,
           columnNumber: 11
         }
       }, this.props.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Heading"], {
@@ -3381,14 +3685,14 @@ var Tab = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111,
+          lineNumber: 110,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112,
+          lineNumber: 111,
           columnNumber: 13
         }
       }, this.props.section)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3398,14 +3702,14 @@ var Tab = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114,
+          lineNumber: 113,
           columnNumber: 11
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Section"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115,
+          lineNumber: 114,
           columnNumber: 13
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_2__["Droppable"], {
@@ -3413,7 +3717,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116,
+          lineNumber: 115,
           columnNumber: 15
         }
       }, function (provided) {
@@ -3422,7 +3726,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 118,
+            lineNumber: 117,
             columnNumber: 21
           }
         }, _this2.props.selected.map(function (question, index) {
@@ -3433,7 +3737,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 121,
+              lineNumber: 120,
               columnNumber: 29
             }
           }, function (provided) {
@@ -3443,7 +3747,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
               __self: _this2,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 127,
+                lineNumber: 126,
                 columnNumber: 33
               }
             }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3453,7 +3757,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
               __self: _this2,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 131,
+                lineNumber: 130,
                 columnNumber: 37
               }
             }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_3__["Box"], {
@@ -3461,14 +3765,14 @@ var Tab = /*#__PURE__*/function (_React$Component) {
               __self: _this2,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 132,
+                lineNumber: 131,
                 columnNumber: 39
               }
             }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
               __self: _this2,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 133,
+                lineNumber: 132,
                 columnNumber: 41
               }
             }, question.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Answer_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -3479,7 +3783,7 @@ var Tab = /*#__PURE__*/function (_React$Component) {
               __self: _this2,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 136,
+                lineNumber: 135,
                 columnNumber: 43
               }
             }))));
@@ -3813,6 +4117,144 @@ SubCheckbox.propTypes = {
   onChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
 };
 /* harmony default export */ __webpack_exports__["default"] = (SubCheckbox);
+
+/***/ }),
+
+/***/ "./app/javascript/components/shared/LogoHeader.js":
+/*!********************************************************!*\
+  !*** ./app/javascript/components/shared/LogoHeader.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bulma_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bulma-components */ "./node_modules/react-bulma-components/dist/index.js");
+/* harmony import */ var react_bulma_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/ellencornelius/outbreak/outbreak_ready/app/javascript/components/shared/LogoHeader.js";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+
+
+
+
+var LogoHeader = /*#__PURE__*/function (_React$Component) {
+  _inherits(LogoHeader, _React$Component);
+
+  var _super = _createSuper(LogoHeader);
+
+  function LogoHeader() {
+    _classCallCheck(this, LogoHeader);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(LogoHeader, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Hero"], {
+        color: "primary",
+        gradient: true,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Hero"].Body, {
+        style: {
+          padding: 15
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Columns"], {
+        className: "is-vcentered",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Columns"].Column, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Heading"], {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17,
+          columnNumber: 15
+        }
+      }, "Outbreak Questionnaire Builder")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Columns"].Column, {
+        size: "one-fifth",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+        style: {
+          width: 120
+        },
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bulma_components__WEBPACK_IMPORTED_MODULE_2__["Image"], {
+        src: this.props.img_src,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23,
+          columnNumber: 17
+        }
+      }))))));
+    }
+  }]);
+
+  return LogoHeader;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (LogoHeader);
 
 /***/ }),
 
@@ -96768,4 +97210,4 @@ module.exports = function (module) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=server_rendering-e3c3eab71ff78b7019ee.js.map
+//# sourceMappingURL=server_rendering-f81d9c145dc810fb71c0.js.map
