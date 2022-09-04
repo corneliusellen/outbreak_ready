@@ -35,6 +35,14 @@ module Services
                             field_annotation: row[:field_annotation]
                           }
 
+        if id == parent_id
+          raise StandardError.new("Question with id #{id} cannot have the same parent id as itself. Parent ids are intended to nest questions under parent questions.")
+        end
+
+        if csv_tags.empty?
+          raise StandardError.new("Question with id #{id} must have at least one tag in order to appear in the Outbreak Builder tool.")
+        end
+
         question = Question.create!(id: id,
                                     section: section,
                                     text: text,
@@ -44,8 +52,6 @@ module Services
                                     redcap_metadata: redcap_metadata)
 
         question.update!(parent_id: parent_id) if parent_id.present?
-
-        next unless !csv_tags.empty?
 
         csv_tags.each do |csv_tag|
           tag = Tag.find_by(name: csv_tag)
