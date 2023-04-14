@@ -10,7 +10,7 @@ You must have PostgreSQL, Rails, and Bundler installed on your machine to use th
 After cloning this repo, run the following command in your CLI:
 ```
 $ bundle install
-$ yarn install
+$ npm install
 $ rake db:{create,migrate}
 ```
 
