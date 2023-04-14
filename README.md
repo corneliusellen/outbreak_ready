@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+### Prerequisites
 
-* Ruby version
+You must have PostgreSQL, Rails, and Bundler installed on your machine to use this repository.
 
-* System dependencies
+### Installation
+After cloning this repo, run the following command in your CLI:
+```
+$ bundle install
+$ yarn install
+$ rake db:{create,migrate}
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To run this application locally, run the following command and visit localhost:3000:
+```
+$ rails server
+```
