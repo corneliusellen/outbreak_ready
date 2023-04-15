@@ -1,21 +1,21 @@
 {
-  "application.js": "/packs/js/application-9b39800ee74d02199fc6.js",
-  "application.js.map": "/packs/js/application-9b39800ee74d02199fc6.js.map",
+  "application.js": "/packs/js/application-1b59e39d06f5c43b0914.js",
+  "application.js.map": "/packs/js/application-1b59e39d06f5c43b0914.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-9b39800ee74d02199fc6.js"
+        "/packs/js/application-1b59e39d06f5c43b0914.js"
       ],
       "js.map": [
-        "/packs/js/application-9b39800ee74d02199fc6.js.map"
+        "/packs/js/application-1b59e39d06f5c43b0914.js.map"
       ]
     },
     "hello_react": {
       "js": [
-        "/packs/js/hello_react-b9d36772081275851597.js"
+        "/packs/js/hello_react-70edc2e1ec8a1d812b31.js"
       ],
       "js.map": [
-        "/packs/js/hello_react-b9d36772081275851597.js.map"
+        "/packs/js/hello_react-70edc2e1ec8a1d812b31.js.map"
       ]
     },
     "hello_typescript": {
@@ -28,17 +28,17 @@
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-f81d9c145dc810fb71c0.js"
+        "/packs/js/server_rendering-db9087e7da0f35090696.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-f81d9c145dc810fb71c0.js.map"
+        "/packs/js/server_rendering-db9087e7da0f35090696.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/js/hello_react-b9d36772081275851597.js",
-  "hello_react.js.map": "/packs/js/hello_react-b9d36772081275851597.js.map",
+  "hello_react.js": "/packs/js/hello_react-70edc2e1ec8a1d812b31.js",
+  "hello_react.js.map": "/packs/js/hello_react-70edc2e1ec8a1d812b31.js.map",
   "hello_typescript.js": "/packs/js/hello_typescript-3216abe440c9f460fd35.js",
   "hello_typescript.js.map": "/packs/js/hello_typescript-3216abe440c9f460fd35.js.map",
-  "server_rendering.js": "/packs/js/server_rendering-f81d9c145dc810fb71c0.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-f81d9c145dc810fb71c0.js.map"
+  "server_rendering.js": "/packs/js/server_rendering-db9087e7da0f35090696.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-db9087e7da0f35090696.js.map"
 }
