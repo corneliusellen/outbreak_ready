@@ -11,8 +11,11 @@ Rails.application.routes.draw do
   put '/questionnaire/:id', to: 'questionnaire#update'
   get '/questionnaire/:id', to: 'questionnaire#show'
   get '/questionnaire/:id/redcap', to: 'questionnaire#redcap'
-  resources :menu_items, only: [:index, :new, :create]
-  get '/menu_items/show_new', to: 'menu_items#show_new'
+
+  # menu_items are currently not supported
+  # resources :menu_items, only: [:index, :new, :create]
+  # get '/menu_items/show_new', to: 'menu_items#show_new'
+
   # get '/questionnaire/standard', to: 'questionnaire#standard'
 
   namespace :admin do

@@ -405,7 +405,11 @@ class Intake extends React.Component {
                   <Button>Cancel</Button>
                 </Form.Control>
                 <Form.Control>
-                  <Button onClick={this.onSubmit} className="button" color="primary" renderAs="a" href={`/menu_items/show_new?id=${this.props.id}`}>Submit</Button>
+                  {/* old menu reference */}
+                  {/* <Button onClick={this.onSubmit} className="button" color="primary" renderAs="a" href={`/menu_items/show_new?id=${this.props.id}`}>Submit</Button> */}
+                  {/* direct link to builder */}
+                  <Button onClick={this.onSubmit} className="button" color="primary" renderAs="a" href={`/builder?id=${this.props.id}`}>Submit</Button>
+
                 </Form.Control>
               </Form.Field>
             </Container>
