@@ -1,1 +1,134 @@
 <%= react_component("Hello", img_src: image_url('coe_logo.png')) %>
+
+<div class="container">
+  <h1 class="title">Question Import</h1>
+    <%= form_tag({action: :upload}, multipart: true, method:'post') do %>
+      <div class="field">
+        <div>
+          <%= label_tag('input_file', 'Select a CSV to upload', class: 'label') %>
+          <%= file_field_tag 'file', required: true %>
+        </div>
+      </div>
+      <div class="control">
+        <%= submit_tag('Submit', class: 'button is-primary') %>
+      </div>
+    <% end %>
+</div>
+<br>
+<div class="container">
+  <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+</div>
+<div class="container">
+<h5 class="title is-5">
+  Question Import Rules:
+</h5>
+<p>
+  For successful import, file must be a CSV (.csv exstension) and follow the rules for each column type below:
+</p>
+<div class="table-container">
+  <table class="table is-bordered is-fullwidth is-hoverable">
+    <thead>
+      <% @headers.each do |header| %>
+        <th><%= String(header) %></th>
+      <% end %>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+            <li> Must be a number</li>
+            <li> Must be unique</li>
+          </td>
+          <td>
+            <li>Must be an ID of existing parent question</li>
+            <li>Child question row must come <em>after</em> parent question</li>
+          </td>
+          <td>
+            <li>Must be one of these values: <b>Contact</b>, <b>Introduction</b>, <b>Screening</b>, <b>Exposure</b>, <b>Other</b>, <b>Symptoms</b>, <b>Onset_duration</b>, <b>Outcomes</b>, <b>Demographics</b></li>
+          </td>
+          <td>
+          </td>
+          <td>
+            <li><b>Y</b> will mark question as mandatory. Any other value will not.</li>
+            <li>Mandatory questions will automatically appear on every questionnaire highlighted in gray.</li>
+          </td>
+          <td>
+            <li>Must be one of these values: <b>radio</b>, <b>checkbox</b>, <b>text</b>, <b>number</b>, <b>instructions</b></li>
+          </td>
+          <td>
+            <li>Choices must be separated with a <b>|</b></li>
+          </td>
+          <td>
+            <li><a href="/admin/dashboard/tags">See list of valid tags</a></li>
+            <li>Questions that should appear on every questionnaire must have tag <b>universal</b></li>
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+          <td>
+            Redcap field
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<h5 class="title is-5">
+  <p><%= link_to "Click here to download example CSV", admin_dashboard_sample_csv_path(:format => "csv")%></p>
+</h5>
+<div>
+<div class="container">
+  <div class="field is-grouped">
+    <button class="button">
+      <a class="html-link" href="/admin/dashboard/questions">View Imported Questions</a>
+    </button>
+    <button class="button ">
+      <a class="html-link" href="/">Back</a>
+    </button>
+  </div>
+</div>
