@@ -13,7 +13,7 @@ class Question < ApplicationRecord
   has_many :questionnaire_questions
   has_many :questionnaires, through: :questionnaire_questions
 
-  belongs_to :parent, class_name: 'Question', optional: true, dependent: :destroy
+  belongs_to :parent, class_name: 'Question', optional: true
   has_many :children, class_name: 'Question', foreign_key: 'parent_id', dependent: :destroy
 
   scope :standard, -> { joins(:tags).where("tags.name = ?", "universal") }
