@@ -29,5 +29,8 @@
   },
   "scripts": {
     "build": "babel src -d lib"
+  },
+  "engines": {
+    "node": "12.14.0"
   }
 }
