@@ -10895,4 +10895,22 @@
    background-color: #fafafa;
    padding: 3rem 1.5rem 6rem;
  }
+
+ .alert-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+.alert-error {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
+
+.alert-notice {
+  background-color: #d9edf7;
+  color: #31708f;
+  border: 1px solid #bce8f1;
+}
  /*# sourceMappingURL=bulma.css.map */
