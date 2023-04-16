@@ -7,13 +7,13 @@ class Question < ApplicationRecord
 
   store :redcap_metadata, accessors: [:variable, :form_name, :section_header, :field_label, :field_note, :text_validation_type, :text_validation_min, :text_validation_max]
 
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
-  has_many :questionnaire_questions
+  has_many :questionnaire_questions, dependent: :destroy
   has_many :questionnaires, through: :questionnaire_questions
 
-  belongs_to :parent, class_name: 'Question', optional: true, dependent: :destroy
+  belongs_to :parent, class_name: 'Question', optional: true
   has_many :children, class_name: 'Question', foreign_key: 'parent_id', dependent: :destroy
 
   scope :standard, -> { joins(:tags).where("tags.name = ?", "universal") }

@@ -1,9 +1,4 @@
 <div class="container">
-  <div class="container">
-    <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-  </div>
   <h1 class="title">Question Import</h1>
     <%= form_tag({action: :upload}, multipart: true, method:'post') do %>
       <div class="field">
