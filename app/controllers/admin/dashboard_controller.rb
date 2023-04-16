@@ -2,7 +2,9 @@ module Admin
   class DashboardController < ApplicationController
     def index
       @headers = ['ID', 'Question group', 'Section', 'Question', 'Mandatory', 'Field Type', 'Choices, Calculations, OR Slider Labels', 'Tag1', 'Tag2',
-                  'Variable / Field Name', 'Form Name', 'SectionHeader', 'Field Label', 'Field Note', 'Text Validation Type OR Show Slider Number', 'Text Validation Min', 'Text Validation Max', 'Identifier?', 'Branching Logic (Show field only if...)', 'Required Field?', 'Custom Alignment', 'Question Number (surveys only)', 'Matrix Group Name', 'Matrix Ranking?', 'Field Annotation']
+                  'Variable / Field Name', 'Form Name', 'SectionHeader', 'Field Label', 'Field Note', 'Text Validation Type OR Show Slider Number',
+                  'Text Validation Min', 'Text Validation Max', 'Identifier?', 'Branching Logic (Show field only if...)', 'Required Field?',
+                  'Custom Alignment', 'Question Number (surveys only)', 'Matrix Group Name', 'Matrix Ranking?', 'Field Annotation']
     end
 
     def upload
