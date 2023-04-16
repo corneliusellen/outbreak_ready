@@ -7,7 +7,7 @@ module Admin
 
       def destroy
         question = Question.find(params['id'])
-        if !question.children.empty?
+        if question.children.present?
           flash[:error] =
             "Question ##{question.id} has children questions and cannot be deleted. Please remove questions with parent ##{question.id} first and then try again."
         else
