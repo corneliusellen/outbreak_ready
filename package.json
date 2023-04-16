@@ -29,5 +29,6 @@
   },
   "scripts": {
     "build": "babel src -d lib"
-  }
+  },
+  "engine": "12.14.0"
 }
