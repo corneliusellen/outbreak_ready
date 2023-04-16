@@ -8,13 +8,14 @@ module Admin
       def destroy
         question = Question.find(params['id'])
         if !question.children.empty?
-          flash[:error] = "Question ##{question.id} has children questions and cannot be deleted. Please remove questions with parent ##{question.id} first and then try again."
+          flash[:error] =
+            "Question ##{question.id} has children questions and cannot be deleted. Please remove questions with parent ##{question.id} first and then try again."
         else
           question.destroy!
           flash[:success] = "Successfully deleted question ##{question.id}"
         end
 
-          redirect_to admin_dashboard_questions_path
+        redirect_to admin_dashboard_questions_path
       end
 
       def nuke
